@@ -2,12 +2,20 @@ import "./Header.scss";
 import { ReactComponent as LogoIcon } from "../../assets/logo/positopia-logo.svg";
 import menu from "../../assets/icons/menu.svg";
 import xmenu from "../../assets/icons/xmenu.svg";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
 
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(true)
+
+    useEffect(() => {
+        console.log('window width: ', window.innerWidth);
+        if (window.innerWidth >= 1280) {
+            setMenuOpen(true);
+        }
+    }, []);
+
 
     return (
         <header className="header">
