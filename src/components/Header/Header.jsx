@@ -7,6 +7,8 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
 
+    const [menuOpen, setMenuOpen] = useState(false)
+
     return (
         <header className="header">
             <NavLink className="header__logo-link" to="/">
@@ -14,13 +16,9 @@ function Header() {
             </NavLink>
 
             <nav className="navbar">
-                {/* <input type="checkbox" id="navbar__checkbox" className="navbar__checkbox" />
-                <label htmlFor="navbar__checkbox" className="navbar__toogle">
-                    <img src={menu} className="navbar__icon navbar__icon--menu" />
-                    <img src={xmenu} className="navbar__icon navbar__icon--xmenu" />
-                </label> */}
-
-                <ul className="navbar__list">
+                <img src={menu} className="navbar__icon navbar__icon--menu" onClick={() => setMenuOpen(!menuOpen)} />
+                {/* <img src={xmenu} className="navbar__icon navbar__icon--xmenu" /> */}
+                <ul className={menuOpen ? "navbar__list" : "navbar__list--closed"}>
                     <li className="navbar__item">
                         <NavLink
                             to="/"
