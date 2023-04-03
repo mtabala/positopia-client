@@ -1,0 +1,119 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, $button-primary, $button-secondary, $background-light, $background-primary);
+    padding: 1rem;
+    width: 100%;
+
+    @include tablet {
+        padding: 1rem 2rem;
+    }
+
+    @include desktop {
+        padding: 2rem 4rem;
+    }
+
+    &__logo-link {
+        height: 3rem;
+        color: $font-secondary;
+        // background: linear-gradient(to right, $font-primary, $font-secondary, $font-light);
+        // background-clip: text;
+        // -webkit-text-fill-color: transparent;
+
+        @include tablet {
+            height: 3.5rem;
+        }
+
+        @include desktop {
+            height: 4rem;
+        }
+    }
+
+    &__logo-img {
+        width: 3rem;
+        height: 3rem;
+
+        @include tablet {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        @include desktop {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__list {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+        text-align: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        position: fixed;
+        top: 4rem;
+        right: 0;
+        background: linear-gradient(to right, $button-primary, $button-secondary, $background-light, $background-primary);
+        height: 70vh;
+        width: 100%;
+        padding: 1.5rem 1rem;
+
+        @include tablet {
+            background: none;
+            font-weight: 400;
+            flex-direction: row;
+            gap: 2rem;
+            top: auto;
+            right: auto;
+            height: auto;
+            width: auto;
+            padding: 0;
+            letter-spacing: 0;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+        }
+    }
+
+    &__item {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        @include tablet {
+            flex: none;
+        }
+    }
+
+    &__link {
+        color: $font-secondary;
+        transition: background-position 1.1s ease-in-out;
+
+        &--active,
+        &:hover {
+            background-image: linear-gradient(to right, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
+            background-size: 200% auto;
+            color: $font-secondary;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 6px;
+            background-position: 100% center;
+        }
+    }
+}
