@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
 
-    const [menuOpen, setMenuOpen] = useState(true)
+    const [menuOpen, setMenuOpen] = useState(false)
 
     useEffect(() => {
         console.log('window width: ', window.innerWidth);
