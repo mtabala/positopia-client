@@ -86,7 +86,7 @@
         align-items: center;
         flex-flow: column nowrap;
         position: fixed;
-        top: 80px;
+        top: 79px;
         right: 0;
         background: linear-gradient(to right, $button-primary, $button-secondary, $background-light, $background-primary);
         height: 70vh;
@@ -145,7 +145,7 @@
         width: 25px;
         height: 25px;
 
-        @include desktop {
+        @include tablet {
             display: none;
         }
     }
