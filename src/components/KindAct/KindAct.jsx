@@ -2,6 +2,9 @@ import "./KindAct.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function KindAct() {
     const api = "http://localhost:8000";
@@ -51,7 +54,9 @@ function KindAct() {
 
 
     return (
-        <><h1>TEST SET TEST </h1></>
+        <>
+            <h1>TEST SET TEST </h1>
+        </>
     );
 }
 
