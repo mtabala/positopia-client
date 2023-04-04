@@ -1,12 +1,14 @@
-import SignInForm from "../components/SignInForm/SignIn";
-import SignUpForm from "../components/SignUpForm/SignUp";
+// import SignInForm from "../components/SignInForm/SignIn";
+// import SignUpForm from "../components/SignUpForm/SignUp";
+import KindAct from "../components/KindAct/KindAct";
 
 function LoginPage() {
 
     return (
         <>
-            <SignInForm />
-            <SignUpForm />
+            <KindAct />
+            {/* <SignInForm />
+            <SignUpForm /> */}
         </>
     );
 }
