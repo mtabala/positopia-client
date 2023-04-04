@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
 import "./SignInSignUpForm.scss";
 import signup from "../../assets/images/team.svg"
 import signin from "../../assets/images/solidarity.svg"
