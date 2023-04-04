@@ -42,7 +42,7 @@ function SignInSignUpForm() {
                                     <img className="form__icon" src={lock} alt="lock icon" />
                                     <input className="form__input" type="password" placeholder="Password" />
                                 </div>
-                                <button className="form__btn btn"> Login </button>
+                                <Link to="/profile" className="form__btn btn"> Login </Link>
 
                                 <p className="form__text">Or Sign in with social platforms</p>
                                 <div className="form__social">
@@ -72,7 +72,7 @@ function SignInSignUpForm() {
                                     <img className="form__icon" src={lock} alt="lock icon" />
                                     <input className="form__input" type="password" placeholder="Password" />
                                 </div>
-                                <button className="form__btn btn"> Sign Up </button>
+                                <Link to="/profile" className="form__btn btn"> Sign Up </Link>
 
                                 <p className="form__text text">Or Sign Up with social platforms</p>
                                 <div className="form__social">
