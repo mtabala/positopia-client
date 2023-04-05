@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 // import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
 import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
 import UserProfile from './pages/UserProfilePage';
 import KindActs from './components/KindActs/KindActs';
 // import NotFoundPage from "./pages/NotFoundPage";
@@ -16,6 +17,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
                 <Route path="/login" element={<LoginPage />}></Route>
+                <Route path="/signup" element={<SignUpPage />}></Route>
                 <Route path="/profile" element={<UserProfile />}> </Route>
                 <Route path="/kindness" element={<KindActs />}> </Route>
                 {/* <Route path="*" element={<NotFoundPage />}></Route> */}

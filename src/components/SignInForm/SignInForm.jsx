@@ -12,7 +12,7 @@ import facebook from "../../assets/icons/facebook.svg"
 import instagram from "../../assets/icons/instagram.svg"
 import google from "../../assets/icons/google.svg"
 
-function SignInSignUpForm() {
+function SignInForm() {
     const [isLogin, setIsLogin] = useState(true);
     const navigate = useNavigate()
 
@@ -110,29 +110,35 @@ function SignInSignUpForm() {
                 </div>
 
                 <div className="panel">
-                    <div className="panels__left">
-                        <div className="panels__content">
-                            <h3 className="panel__title">New here?</h3>
-                            <p className="panel__text text">Join the community of socially conscious individuals who prioritize kindness and compassion in their daily lives.</p>
-                            <button className="panel__btn btn" onClick={handleToggleForm}>
-                                Sign up
-                            </button>
+                    {isLogin ? (
+                        <div className="panel__left">
+                            <div className="panel__content">
+                                <h3 className="panel__title">New here?</h3>
+                                <p className="panel__text text">Join the community of socially conscious individuals who prioritize kindness and compassion in their daily lives.</p>
+                                {/* <Link to="/signup" className="panel__btn-link"> */}
+                                <button className="panel__btn btn" onClick={handleToggleForm}>
+                                    Sign up
+                                </button>
+                                {/* </Link> */}
+                            </div>
+                            <img src={signin} className="panel__img" alt="sign in" />
                         </div>
-                        <img src={signin} className="panel__img" alt="sign in" />
-                    </div>
-                    <div className="panels__content">
-                        <div className="panels__content">
-                            <h3 className="panel__title">One of us?</h3>
-                            <p className="panel__text text">Welcome back! We've missed you, ready to do more good in the world and make a positive impact on others? </p>
-                            <button className="panel__btn btn" onClick={handleToggleForm}>
-                                Sign in
-                            </button>
+                    ) : (
+
+                        <div className="panel__right">
+                            <div className="panel__content">
+                                <h3 className="panel__title">One of us?</h3>
+                                <p className="panel__text text">Welcome back! We've missed you, ready to do more good in the world and make a positive impact on others? </p>
+                                <button className="panel__btn btn" onClick={handleToggleForm}>
+                                    Sign in
+                                </button>
+                            </div>
+                            <img src={signup} className="panel__img" alt="sign up" />
                         </div>
-                        <img src={signup} className="panel__img" alt="sign up" />
-                    </div>
+                    )}
                 </div>
             </section>
         </>
     )
 }
-export default SignInSignUpForm;
+export default SignInForm;

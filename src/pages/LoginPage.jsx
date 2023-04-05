@@ -1,12 +1,10 @@
-import SignInSignUpForm from "../components/SignInForm/SignInSignUpForm";
-// import KindAct from "../components/KindAct/KindAct";
+import SignInForm from "../components/SignInForm/SignInForm";
 
 function LoginPage() {
 
     return (
         <>
-            {/* <KindAct /> */}
-            <SignInSignUpForm />
+            <SignInForm />
         </>
     );
 }

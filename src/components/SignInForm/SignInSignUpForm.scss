@@ -11,6 +11,9 @@
     background: linear-gradient(to right, #0096c7, #00b4d8, #caf0f8, #90e0ef);
 }
 
+.forms {
+    width: 50%;
+}
 
 .form {
     display: flex;
@@ -32,6 +35,7 @@
         border-radius: 2rem;
         display: grid;
         grid-template-columns: 15% 85%;
+        width: 60%;
     }
 
     &__input {
@@ -95,7 +99,17 @@
     width: 55%;
 
     &__content {
+        display: flex;
+        flex-direction: column;
         text-align: center;
+        gap: 1rem;
+    }
+
+    &__img {
+        width: 420px;
+        display: flex;
+        margin: auto;
+        padding: 1rem 0;
     }
 
     &__title {
