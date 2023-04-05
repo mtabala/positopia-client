@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SignInSignUpForm.scss";
 import signup from "../../assets/images/team.svg"
@@ -14,10 +14,26 @@ import google from "../../assets/icons/google.svg"
 
 function SignInSignUpForm() {
     const [isLogin, setIsLogin] = useState(true);
+    const navigate = useNavigate()
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form submitted");
+
+        axios.post('http://localhost:8000/profile/login', {
+            user: e.target.username.value,
+            password: e.target.password.value
+        }).then(res => {
+
+            const loggedInUser = res.data;
+            alert("Welcome back, let's do some kindness");
+
+            // use navigate whatever and alsoo put loggin user into the navigate
+            console.log('res: ', res)
+            // navigate to whatever page with the response info
+            navigate("/profile", { state: loggedInUser });
+        })
     };
 
     const handleToggleForm = () => {
@@ -37,13 +53,14 @@ function SignInSignUpForm() {
                                 <h2 className="form__title">Sign in</h2>
                                 <div className="form__inputs">
                                     <img className="form__icon" src={user} alt="user icon" />
-                                    <input className="form__input" type="text" placeholder="Username" />
+                                    <input className="form__input" name="username" type="text" placeholder="Username" />
                                 </div>
                                 <div className="form__inputs">
                                     <img className="form__icon" src={lock} alt="lock icon" />
-                                    <input className="form__input" type="password" placeholder="Password" />
+                                    <input className="form__input" name="password" type="password" placeholder="Password" />
                                 </div>
-                                <Link to="/profile" className="form__btn btn"> Login </Link>
+                                {/* <Link to="/profile" className="form__btn btn"> Login </Link> */}
+                                <button className="form__btn btn"> Login </button>
 
                                 <p className="form__text">Or Sign in with social platforms</p>
                                 <div className="form__social">
