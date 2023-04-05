@@ -53,11 +53,42 @@ function KindAct() {
     };
 
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 400,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    }
+
+
     return (
-        <>
-            <h1>TEST SET TEST </h1>
-        </>
+        <section className="kindness">
+            <h2 className="kindness__header"> Choose your daily act of kindness </h2>
+
+            <Slider {...settings}>
+                {kindActs
+                    .map((kindAct) => (
+                        <>
+                            <article className="kindness__act">
+                                <div className="kindness__act-wrapper">
+                                    <div className="kindness__text">
+                                        <h3 className="kindness__title">{kindAct.title}</h3>
+                                        <p className="kindness__description"> {kindAct.description}</p>
+                                    </div>
+                                    <img className="kindness__img" src={kindAct.image} />
+                                </div>
+
+                                <button className="kindness__btn">Select</button>
+                            </article>
+
+                        </>
+                    ))}
+            </Slider>
+        </section>
     );
 }
+
+
 
 export default KindAct;
