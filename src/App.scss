@@ -10,3 +10,14 @@
     padding: 0;
     font-family: "Graphik", Verdana;
 }
+
+.user {
+    display: flex;
+    width: 100%;
+
+    &__view {
+        display: flex;
+        padding: 4rem 2rem;
+        gap: 8rem;
+    }
+}

@@ -1,0 +1,18 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.user {
+    &__nav {
+        background-color: $background-primary;
+        padding: 5rem 1rem 2rem 2rem;
+        font-size: 1rem;
+        width: 25%;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+    }
+}

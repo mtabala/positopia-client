@@ -1,4 +1,4 @@
-import SignInSignUpForm from "../components/SignInSignUpForm/SignInSignUpForm";
+import SignInSignUpForm from "../components/SignInForm/SignInSignUpForm";
 // import KindAct from "../components/KindAct/KindAct";
 
 function LoginPage() {
