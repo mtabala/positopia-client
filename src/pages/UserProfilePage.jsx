@@ -58,7 +58,7 @@ function UserProfilePage() {
 
     return (
         <main className="user">
-            <UserProfileNav />
+            <UserProfileNav id={id} />
             {user && (<section className="user__view">
                 {users
                     .filter((obj) => (

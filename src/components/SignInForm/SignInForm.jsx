@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import "./SignInSignUpForm.scss";
 import signup from "../../assets/images/team.svg"
@@ -15,6 +17,7 @@ import google from "../../assets/icons/google.svg"
 function SignInForm() {
     const [isLogin, setIsLogin] = useState(true);
     const navigate = useNavigate()
+    const notify = () => toast("Welcome back, we've missed you!");
 
 
     const handleSubmit = (e) => {
@@ -28,10 +31,12 @@ function SignInForm() {
 
             const loggedInUser = res.data;
             console.log("loggedInUser", loggedInUser)
-            alert("Welcome back, let's do some kindness");
+            // alert("Welcome back, let's do some kindness");
 
             // use navigate whatever and alsoo put loggin user into the navigate
             console.log('res: ', res)
+            notify()
+
             // navigate to whatever page with the response info
             navigate(`/profile/${loggedInUser.id}`);
             // { state: loggedInUser }
@@ -47,6 +52,7 @@ function SignInForm() {
     return (
         <>
             <section className={containerClassName}>
+                {/* <ToastContainer /> */}
                 <div className="forms">
 
                     <div className="forms__wrapper">
@@ -63,6 +69,7 @@ function SignInForm() {
                                 </div>
                                 {/* <Link to="/profile" className="form__btn btn"> Login </Link> */}
                                 <button className="form__btn btn"> Login </button>
+
 
                                 <p className="form__text">Or Sign in with social platforms</p>
                                 <div className="form__social">

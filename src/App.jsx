@@ -8,11 +8,14 @@ import UserProfile from './pages/UserProfilePage';
 import KindActs from './components/KindActs/KindActs';
 import ActsJournal from "./components/ActsJournal/ActsJournal";
 // import NotFoundPage from "./pages/NotFoundPage";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
     return (
         <BrowserRouter>
+            <ToastContainer position="top-center" />
             <Header />
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>

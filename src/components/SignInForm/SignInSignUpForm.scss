@@ -1,6 +1,17 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+// .toast {
+//     position: "top-center",
+//         // autoClose: 5000,
+//         // hideProgressBar: false,
+//         // closeOnClick: true,
+//         // pauseOnHover: true,
+//         // draggable: true,
+//         // progress: undefined,
+//         // theme: "light",
+// }
+
 .container {
     display: flex;
     width: 100%;
