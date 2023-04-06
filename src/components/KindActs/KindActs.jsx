@@ -55,11 +55,11 @@ function KindActs() {
 
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 400,
-        slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToShow: 3,
+        slidesToScroll: 3
     }
 
 

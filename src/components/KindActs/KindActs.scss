@@ -4,37 +4,13 @@
 .kindness {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 
     &__header {
         font-size: 2.2rem;
         color: $font-primary;
         font-weight: 600;
-    }
-
-    &__act-wrapper {
-        display: flex;
-    }
-
-    &__img {
-        width: 100%;
-        height: 70vh;
-    }
-
-    &__btn {
-        width: 9.3rem;
-        background-image: linear-gradient(to right, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
-        border: none;
-        height: 3rem;
-        border-radius: 1rem;
-        color: $font-secondary;
-        text-transform: uppercase;
-        font-weight: 600;
-        margin: 0.6rem 0;
-        cursor: pointer;
-        transition: 0.5s ease-in-out;
-
-        &__:hover {
-            background-image: linear-gradient(to left, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
-        }
+        padding: 2rem 0;
+        margin: auto;
     }
 }

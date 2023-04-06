@@ -1,0 +1,53 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.kindness {
+
+    &__act {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        padding: 0 0 2rem;
+    }
+
+    &__img {
+        width: 333px;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__title {
+        color: #03045e;
+        font-size: 1.2rem;
+    }
+
+    &__description {
+        color: #023e8a;
+        font-size: 0.8rem;
+    }
+
+    &__btn {
+        width: 9.3rem;
+        background-image: linear-gradient(to right, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
+        border: none;
+        height: 3rem;
+        border-radius: 1rem;
+        color: $font-secondary;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0.6rem 0;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+
+        &__:hover {
+            background-image: linear-gradient(to left, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
+        }
+    }
+}
