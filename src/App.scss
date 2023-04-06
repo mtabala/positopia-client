@@ -17,8 +17,9 @@
     width: 100%;
 
     &__view {
+        background: linear-gradient(to left, #F5F1EE, white, #caf0f8, #ACE5FD);
         display: flex;
-        padding: 4rem 2rem;
-        gap: 8rem;
+        padding: 2rem 1rem;
+        gap: 2rem;
     }
 }
