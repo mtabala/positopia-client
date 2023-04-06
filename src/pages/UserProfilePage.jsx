@@ -7,9 +7,9 @@ import UserProfileNav from "../components/UserProfileNav/UserProfileNav";
 function UserProfilePage() {
     const api = "http://localhost:8000";
 
-    const location = useLocation();
-    const loggedInUser = location.state;
-    console.log("myState:", loggedInUser);
+    // const location = useLocation();
+    // const loggedInUser = location.state;
+    // console.log("myState:", loggedInUser);
 
     const [users, setUsers] = useState([]); // all users
     const [user, setUser] = useState(null);
@@ -35,7 +35,7 @@ function UserProfilePage() {
             .get(`${api}/profile/${id}`)
             .then((res) => {
                 setUser(res.data);
-                // console.log(res.data);
+                console.log(res.data);
                 sessionStorage.setItem("userId", res.data.id);
             })
             .catch((err) => {
@@ -59,18 +59,18 @@ function UserProfilePage() {
     return (
         <main className="user">
             <UserProfileNav />
-
-            <section className="user__view">
+            {user && (<section className="user__view">
                 {users
-                    .filter((user) => (
-                        loggedInUser.id === user.id
+                    .filter((obj) => (
+                        obj.id === user.id
                     ))
                     .map((user) => (
                         <>
                             <UserProfile key={user.id} userImage={user.image} userName={user.name} userDescription={user.description} />
                         </>
                     ))}
-            </section>
+            </section>)}
+
         </main>
 
     );

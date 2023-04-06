@@ -27,12 +27,14 @@ function SignInForm() {
         }).then(res => {
 
             const loggedInUser = res.data;
+            console.log("loggedInUser", loggedInUser)
             alert("Welcome back, let's do some kindness");
 
             // use navigate whatever and alsoo put loggin user into the navigate
             console.log('res: ', res)
             // navigate to whatever page with the response info
-            navigate("/profile", { state: loggedInUser });
+            navigate(`/profile/${loggedInUser.id}`);
+            // { state: loggedInUser }
         })
     };
 

@@ -18,6 +18,7 @@ function App() {
                 <Route path="/" element={<HomePage />}></Route>
                 <Route path="/login" element={<LoginPage />}></Route>
                 <Route path="/profile" element={<UserProfile />}> </Route>
+                <Route path="/profile/:id" element={<UserProfile />}> </Route>
                 <Route path="/kindness" element={<KindActs />}> </Route>
                 <Route path="/journal" element={<ActsJournal />}></Route>
                 {/* <Route path="*" element={<NotFoundPage />}></Route> */}

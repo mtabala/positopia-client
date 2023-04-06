@@ -10,8 +10,23 @@ function UserProfile({ userImage, userName, userDescription }) {
             </div>
 
             <div className="user__bio">
-                <h3 className="user__name"> About me: </h3>
-                <p className="user__description">{userDescription}</p>
+                <div className="user__wrapper">
+                    <h3 className="user__name"> About me: </h3>
+                    <p className="user__description">{userDescription}</p>
+                </div>
+
+                <div className="user__wrapper">
+                    <div className="user__current-acts">
+                        <img />
+                        <h3> Share a meal </h3>
+                        <p> Cook a meal for someone who can use help. </p>
+                    </div>
+
+                    <div className="user__completed-acts">
+                        <img />
+                        <p>23 acts of kindness completed! Way to go!</p>
+                    </div>
+                </div>
             </div>
         </>
     )
