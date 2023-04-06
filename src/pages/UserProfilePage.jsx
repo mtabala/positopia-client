@@ -35,6 +35,8 @@ function UserProfilePage() {
             .get(`${api}/profile/${id}`)
             .then((res) => {
                 setUser(res.data);
+                // console.log(res.data);
+                sessionStorage.setItem("userId", res.data.id);
             })
             .catch((err) => {
                 console.log("err: ", err);

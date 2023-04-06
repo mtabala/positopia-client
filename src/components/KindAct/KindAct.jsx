@@ -13,15 +13,21 @@ function KindAct({ kindActImage, kindActDescription, kindActTitle }) {
 
     const handleClick = () => {
 
-        axios
-            .post('http://localhost:8000/profile/journal', {
-                kindActTitle: kindActTitle,
-            })
-            .then(res => {
-                const selectedAct = res.data;
-                navigate("/journal", { state: selectedAct });
-            })
-    };
+        const userId = sessionStorage.getItem('userId')
+        if (userId) {
+
+
+            axios
+                .post('http://localhost:8000/profile/journal', {
+                    kindActTitle: kindActTitle,
+                    id: userId,
+                })
+                .then(res => {
+                    const selectedAct = res.data;
+                    navigate("/journal", { state: selectedAct });
+                })
+        }
+    }
 
     return (
         <article className="kindness__act">

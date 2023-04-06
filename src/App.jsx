@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from './pages/LoginPage';
 import UserProfile from './pages/UserProfilePage';
 import KindActs from './components/KindActs/KindActs';
+import ActsJournal from "./components/ActsJournal/ActsJournal";
 // import NotFoundPage from "./pages/NotFoundPage";
 
 
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/login" element={<LoginPage />}></Route>
                 <Route path="/profile" element={<UserProfile />}> </Route>
                 <Route path="/kindness" element={<KindActs />}> </Route>
+                <Route path="/journal" element={<ActsJournal />}></Route>
                 {/* <Route path="*" element={<NotFoundPage />}></Route> */}
             </Routes>
             {/* <Footer /> */}
