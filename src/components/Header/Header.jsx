@@ -53,8 +53,8 @@ function Header() {
                         </NavLink>
                     </li>
 
-                    <li className="navbar__item navbar__item--dropdown">
-                        {/* onClick={toggleDropdown} */}
+                    {/* <li className="navbar__item navbar__item--dropdown">
+                        onClick={toggleDropdown}
                         <NavLink
                             to="/language"
                             className={({ isActive }) =>
@@ -65,7 +65,7 @@ function Header() {
                         >
                             Languages
                         </NavLink>
-                    </li>
+                    </li> */}
 
                     <li className="navbar__item">
                         <NavLink

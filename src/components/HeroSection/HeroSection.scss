@@ -2,12 +2,14 @@
 @use "../../styles/partials/mixins" as *;
 
 .hero {
-    background-image: url(../../assets/images/hero_background.jpg);
     display: flex;
+    flex-direction: column;
     width: 100%;
     align-items: center;
 
     @include tablet {
+        background-image: url(../../assets/images/hero_background.jpg);
+        flex-direction: row;
         padding: 0 0 1rem 2rem;
         gap: 3rem;
         max-height: 85vh;
@@ -20,9 +22,18 @@
     }
 
     &__wrapper {
+        position: relative;
+        top: -14rem;
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        order: 2;
+
         @include tablet {
-            display: flex;
-            flex-direction: column;
+            top: 0;
+            order: 0;
+            width: auto;
             gap: 1.5rem;
         }
 
@@ -55,13 +66,25 @@
         &:after {
             content: "";
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 0;
-            height: 10px;
+            height: 8px;
             width: 110%;
             border: solid 4px #069CDA;
             border-color: #069CDA transparent transparent transparent;
             border-radius: 50%;
+
+            @include tablet {
+                // content: "";
+                // position: absolute;
+                bottom: -10px;
+                // left: 0;
+                height: 10px;
+                // width: 110%;
+                // border: solid 4px #069CDA;
+                // border-color: #069CDA transparent transparent transparent;
+                // border-radius: 50%;
+            }
         }
     }
 
@@ -69,6 +92,7 @@
         color: #045E83;
         font-family: 'ABeeZee';
         font-weight: 400;
+        font-size: 0.9rem;
 
         @include tablet {
             font-size: 1.3rem;
@@ -78,14 +102,15 @@
         @include desktop {
             font-size: 1.5rem;
             line-height: 1.75rem;
+            padding: 0 4rem 0 0;
         }
     }
 
     &__btn {
         color: white;
-        font-size: 1.5rem;
         line-height: 1.75rem;
         font-weight: 400;
+        width: 6.2rem;
         background: #045E83;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
@@ -93,6 +118,7 @@
         cursor: pointer;
 
         @include tablet {
+            font-size: 1.5rem;
             width: 10.8rem;
             height: 2.75rem;
             padding: 0.5rem;
@@ -100,12 +126,17 @@
     }
 
     &__video {
+        height: 60vh;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
 
         @include tablet {
+            height: 80vh;
             width: 90%;
         }
 
         @include desktop {
+            height: 85vh;
             flex: 1;
         }
     }
