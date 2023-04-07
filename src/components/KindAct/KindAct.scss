@@ -10,11 +10,15 @@
         align-items: center;
         text-align: center;
         gap: 1rem;
-        padding: 0 0 2rem;
+        background: linear-gradient(to left, #F5F1EE, white, #caf0f8, #ACE5FD);
+        padding: 1rem;
+        border-radius: 16px;
+        margin: 0 0.5rem;
     }
 
     &__img {
-        width: 333px;
+        width: 18.7rem;
+        border-radius: 11%;
     }
 
     &__text {

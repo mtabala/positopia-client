@@ -1,5 +1,6 @@
 import "./Header.scss";
 import { ReactComponent as LogoIcon } from "../../assets/logo/positopia-logo.svg";
+// import { ReactComponent as Logo } from "../../assets/logo/birdLogo.svg";
 import menu from "../../assets/icons/menu.svg";
 import xmenu from "../../assets/icons/xmenu.svg";
 import React, { useEffect, useState } from "react";

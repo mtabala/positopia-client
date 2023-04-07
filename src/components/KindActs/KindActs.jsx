@@ -56,6 +56,7 @@ function KindActs() {
 
     const settings = {
         dots: false,
+        arrows: true,
         infinite: true,
         speed: 400,
         slidesToShow: 3,
@@ -65,8 +66,10 @@ function KindActs() {
 
     return (
         <section className="kindness">
-            <h2 className="kindness__header"> Choose your daily act of kindness </h2>
-
+            <div className="kindness__header-wrap">
+                <h2 className="kindness__header">Choose your daily <span className="kindness__underline">act of kindness</span> </h2>
+            </div>
+            {/* ❤ */}
             <Slider {...settings}>
                 {kindActs
                     .map((kindAct) => (
