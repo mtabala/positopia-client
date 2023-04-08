@@ -15,16 +15,17 @@
 .container {
     display: flex;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     justify-content: center;
     gap: 5rem;
-    padding: 2rem;
-    background: linear-gradient(to left, #F5F1EE, white, #caf0f8, #ACE5FD);
+    padding: 2rem 6.5rem;
+    // background: linear-gradient(to left, #F5F1EE, white, #caf0f8, #ACE5FD);
+    background-image: url(../../assets/images/hero_background.jpg);
     // background: linear-gradient(to right, #0096c7, #00b4d8, #caf0f8, #90e0ef);
 }
 
 .forms {
-    width: 60%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,22 +37,27 @@
     justify-content: center;
     flex-direction: column;
     padding: 0rem 3rem;
-    gap: 0.5rem;
 
     &__title {
+        font-family: 'Marmelad';
         font-size: 2rem;
         color: $font-primary;
         margin-bottom: 0.5rem;
     }
 
     &__inputs {
-        background-color: $background-light;
+        // background-color: $background-light;
         margin: 0.6rem 0;
         height: 3.5rem;
         border-radius: 2rem;
         display: grid;
         grid-template-columns: 15% 85%;
-        width: 60%;
+        width: 100%;
+        background-image: url(http://localhost:3000/static/media/hero_background.587b2cf….jpg);
+        background-blend-mode: darken;
+        background-color: rgba(6, 156, 218, 0.2117647059);
+        opacity: 90%;
+        box-shadow: 10px 5px 40px #069CDA;
     }
 
     &__input {
@@ -60,8 +66,9 @@
         border: none;
         line-height: 1;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 1rem;
         color: $font-secondary;
+        padding: 0 1.2rem;
 
         &::placeholder {
             color: $font-light;
@@ -70,21 +77,24 @@
     }
 
     &__icon {
-        text-align: center;
-        line-height: 55px;
-        color: $font-light;
-        transition: 0.5s;
-        font-size: 1.1rem;
+        position: relative;
+        top: 17px;
+        left: 24px;
+        height: 24px;
+        width: 24px;
     }
 
     &__text {
+        font-family: 'Marmelad';
         font-size: 0.9rem;
-        color: $font-secondary;
+        color: $font-primary;
     }
 
     &__social {
         display: flex;
         justify-content: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
 
         &-link {
             height: 46px;
@@ -113,42 +123,39 @@
     // align-items: center;
     // gap: 2rem;
     // width: 55%;
+    padding: 0 4rem;
+    flex: 1;
 
-    &__left {
+    &__left,
+    &__right {
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 2rem;
-        width: 80%;
-        margin: auto;
+        gap: 1rem;
+        padding: 2rem 0;
     }
 
     &__content {
-        text-align: center;
         align-items: center;
         display: flex;
         flex-direction: column;
         text-align: center;
-        justify-content: center;
         gap: 1rem;
     }
 
     &__img {
-        width: 420px;
-        display: flex;
-        margin: auto;
-        border-bottom-left-radius: 40%;
-        border-bottom-right-radius: 40%;
-        // padding: 1rem 0;
+        width: 445px;
     }
 
     &__title {
-        font-size: 3rem;
+        font-family: 'Marmelad';
+        font-size: 2rem;
         color: $font-primary;
     }
 
     &__text {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding: 0 2rem;
         color: $font-secondary;
     }
 }
@@ -167,6 +174,7 @@
     height: 2.75rem;
     text-align: center;
     padding: 0.5rem;
+    margin: 1rem 0;
     // width: 9.3rem;
     // background-image: linear-gradient(to right, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
     // border: none;

@@ -123,10 +123,10 @@ function SignInForm() {
                         <div className="panel__left">
                             <div className="panel__content">
                                 <h3 className="panel__title">New here?</h3>
-                                <p className="panel__text text">Join the community of socially conscious individuals who prioritize kindness and compassion in their daily lives.</p>
+                                <p className="panel__text text">Join the community of socially conscious individuals who prioritize kindness and compassion in their daily lives. When we're kind we inspire others to be kind. So be kind, share your stories and watch how you inspire others.</p>
                                 {/* <Link to="/signup" className="panel__btn-link"> */}
                                 <button className="panel__btn btn" onClick={handleToggleForm}>
-                                    Sign up
+                                    Join Positopia
                                 </button>
                                 {/* </Link> */}
                             </div>
@@ -137,9 +137,9 @@ function SignInForm() {
                         <div className="panel__right">
                             <div className="panel__content">
                                 <h3 className="panel__title">One of us?</h3>
-                                <p className="panel__text text">Welcome back! We've missed you, ready to do more good in the world and make a positive impact on others? </p>
+                                <p className="panel__text text">Welcome back, we've missed you! Ready to do more good in the world and make a positive impact on others? Start with everyday actions to change your life and the world around you.  </p>
                                 <button className="panel__btn btn" onClick={handleToggleForm}>
-                                    Sign in
+                                    Yes, I'm ready!
                                 </button>
                             </div>
                             <img src={signup} className="panel__img" alt="sign up" />
