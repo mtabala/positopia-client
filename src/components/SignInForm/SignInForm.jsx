@@ -15,31 +15,25 @@ import instagram from "../../assets/icons/instagram.svg"
 import google from "../../assets/icons/google.svg"
 
 function SignInForm() {
+    const api = "http://localhost:8000";
     const [isLogin, setIsLogin] = useState(true);
     const navigate = useNavigate()
-    const notify = () => toast("Welcome back, we've missed you!");
-
+    const notify = () => toast("Welcome back ❤ We missed you!");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form submitted");
 
-        axios.post('http://localhost:8000/profile/login', {
+        axios.post(`${api}/profile/login`, {
             user: e.target.username.value,
             password: e.target.password.value
         }).then(res => {
-
             const loggedInUser = res.data;
             console.log("loggedInUser", loggedInUser)
-            // alert("Welcome back, let's do some kindness");
-
-            // use navigate whatever and alsoo put loggin user into the navigate
             console.log('res: ', res)
-            notify()
-
-            // navigate to whatever page with the response info
+            notify();
             navigate(`/profile/${loggedInUser.id}`);
-            // { state: loggedInUser }
+        }).catch((error) => {
+            console.log("error: ", error);
         })
     };
 
