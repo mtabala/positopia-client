@@ -7,10 +7,6 @@ import UserProfileNav from "../components/UserProfileNav/UserProfileNav";
 function UserProfilePage() {
     const api = "http://localhost:8000";
 
-    // const location = useLocation();
-    // const loggedInUser = location.state;
-    // console.log("myState:", loggedInUser);
-
     const [users, setUsers] = useState([]); // all users
     const [user, setUser] = useState(null);
     const { id } = useParams();

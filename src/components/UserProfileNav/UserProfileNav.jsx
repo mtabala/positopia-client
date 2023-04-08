@@ -23,7 +23,7 @@ function UserProfileNav({ id }) {
                 </li>
 
                 <li className="user__item">
-                    <NavLink to="/journal" className={({ isActive }) =>
+                    <NavLink to={`/journal/${id}`} className={({ isActive }) =>
                         isActive
                             ? "user__item-link user__item-link--active"
                             : "user__item-link"
@@ -31,7 +31,7 @@ function UserProfileNav({ id }) {
                 </li>
 
                 <li className="user__item">
-                    <NavLink to="/setting" className={({ isActive }) =>
+                    <NavLink to={`/setting/${id}`} className={({ isActive }) =>
                         isActive
                             ? "user__item-link user__item-link--active"
                             : "user__item-link"
