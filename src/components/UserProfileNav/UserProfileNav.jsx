@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "../UserProfileNav/UserProfileNav.scss"
 
 function UserProfileNav({ id }) {
@@ -7,18 +7,35 @@ function UserProfileNav({ id }) {
         <aside className="user__nav">
             <ul className="user__list">
                 <li className="user__item">
-                    <Link to={`/profile${id}`} className="user__item-link"> My Profile </Link>
+                    <NavLink to={`/profile/${id}`}
+                        className={({ isActive }) =>
+                            isActive
+                                ? "user__item-link user__item-link--active"
+                                : "user__item-link"
+                        }> My Profile </NavLink>
                 </li>
                 <li className="user__item">
-                    <Link to="/kindness" className="user__item-link"> Daily Kindness Act </Link>
+                    <NavLink to="/kindness" className={({ isActive }) =>
+                        isActive
+                            ? "user__item-link user__item-link--active"
+                            : "user__item-link"
+                    }> Daily Kindness Act </NavLink>
                 </li>
 
                 <li className="user__item">
-                    <Link to="/journal" className="user__item-link"> Kindness Journal </Link>
+                    <NavLink to="/journal" className={({ isActive }) =>
+                        isActive
+                            ? "user__item-link user__item-link--active"
+                            : "user__item-link"
+                    }> Kindness Journal </NavLink>
                 </li>
 
                 <li className="user__item">
-                    <Link to="/setting" className="user__item-link"> Profile settings </Link>
+                    <NavLink to="/setting" className={({ isActive }) =>
+                        isActive
+                            ? "user__item-link user__item-link--active"
+                            : "user__item-link"
+                    }> Profile settings </NavLink>
                 </li>
             </ul>
         </aside>

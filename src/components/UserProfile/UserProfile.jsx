@@ -35,14 +35,20 @@ function UserProfile({ userImage, userName, userDescription }) {
                         <p className="user__input">{userDescription}</p>
                     </div>
 
-                    <div className="user__stats">
+                    {/* <div className="user__stats">
                         <h4 className="user__title"> Stats</h4>
                         <img className="user__icon" src={heart} />
                         <p className="user__input">23 kind acts completed!</p>
-                    </div>
+                    </div> */}
 
                 </div>
             </section>
+
+            <div className="user__stats">
+                <h4 className="user__title"> Stats</h4>
+                <img className="user__icon" src={heart} />
+                <p className="user__input">23 kind acts completed!</p>
+            </div>
 
             {/* <div className="user__profile">
                 <h3 className="user__name">{userName}</h3>

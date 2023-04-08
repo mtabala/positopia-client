@@ -3,22 +3,72 @@
 
 .user {
     &__nav {
-        background: linear-gradient(to bottom, #F5F1EE, white, #caf0f8, #ACE5FD);
-        padding: 3rem 0.5rem 2rem 2rem;
-        width: 15%;
-        // font-size: 1rem;
+        width: 25%;
+        background-image: url(../../assets/images/hero_background.jpg);
+        background-blend-mode: darken;
+        background-color: rgba(6, 156, 218, 0.2117647059);
+        opacity: 90%;
+        box-shadow: 10px 5px 40px #069CDA;
+
+        // background: linear-gradient(to bottom, #F5F1EE, white, #caf0f8, #ACE5FD);
+        padding: 3rem 0 0;
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         align-items: end;
-        gap: 1rem;
+        gap: 3rem;
+        padding: 0.3rem 0;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 20px;
     }
 
     &__item-link {
+        font-family: 'Marmelad';
         color: #023e8a;
-        font-weight: 600;
-        font-size: 0.9rem;
+        font-weight: 400;
+        font-size: 1rem;
+        border-radius: 8px;
+        padding: 5px;
+
+        transition: box-shadow 0.3s ease-in-out;
+
+        &--active {
+            font-family: 'Marmelad';
+            color: #023e8a;
+            font-weight: 400;
+            font-size: 1rem;
+            border-radius: 8px;
+            padding: 5px;
+
+            transition: box-shadow 0.3s ease-in-out;
+
+            // transform: translateX(10px);
+            text-transform: uppercase;
+
+            box-shadow: 0px 0px 20px #069CDA;
+            font-weight: 600;
+
+
+        }
+
+        &:hover {
+            // transform: translateX(10px);
+            text-transform: uppercase;
+
+            box-shadow: 0px 0px 20px #069CDA;
+            font-weight: 600;
+
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
     }
 }
