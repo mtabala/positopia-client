@@ -62,7 +62,7 @@ function UserProfilePage() {
                     ))
                     .map((user) => (
                         <>
-                            <UserProfile key={user.id} userImage={user.image} userName={user.name} userDescription={user.description} />
+                            <UserProfile {...user} />
                         </>
                     ))}
             </section>)}

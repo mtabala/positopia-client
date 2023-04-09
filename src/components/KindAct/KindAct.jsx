@@ -24,7 +24,7 @@ function KindAct({ kindActImage, kindActDescription, kindActTitle }) {
                 })
                 .then(res => {
                     const selectedAct = res.data;
-                    navigate("/journal", { state: selectedAct });
+                    navigate(`/profile/${userId}`, { state: selectedAct });
                 })
         }
     }
