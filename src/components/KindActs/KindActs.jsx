@@ -1,17 +1,21 @@
 import "./KindActs.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import KindAct from "../KindAct/KindAct";
+import { ReactComponent as ArrowBack } from "../../assets/icons/arrowBack.svg";
+// import arrowBack from "../../assets/icons/arrowBack.svg";
 
 function KindActs() {
     const api = "http://localhost:8000";
 
+    const navigate = useNavigate()
+
     const [kindActs, setKindActs] = useState([]); // all acts of kindness
-    const [kindAct, setKindAct] = useState(null);
+    const [, setKindAct] = useState(null);
     const { id } = useParams();
 
     // Define useEffect hook to get all videos from the API
@@ -67,9 +71,12 @@ function KindActs() {
     return (
         <section className="kindness">
             <div className="kindness__header-wrap">
+                <Link className="kindness__header-link btn" onClick={() => { navigate(-1); }}>
+                    <ArrowBack className="kindness__header-icon" />
+                    {/* <img className="kindness__header-icon" src={arrowBack} alt="arrow back icon" /> */}
+                </Link>
                 <h2 className="kindness__header">Choose your daily <span className="kindness__underline">act of kindness</span> </h2>
             </div>
-            {/* ❤ */}
             <Slider {...settings}>
                 {kindActs
                     .map((kindAct) => (

@@ -5,11 +5,27 @@
     display: flex;
     flex-direction: column;
     padding: 0 6.5rem;
+    height: 90vh;
     background-image: url(../../assets/images/hero_background.jpg);
 
-    &__header-wrap {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
+    // &__header-wrap {
+    //     margin-bottom: 1rem;
+    //     padding-bottom: 1rem;
+    // }
+    &__header-link {
+        position: relative;
+        top: 3.3rem;
+        left: 1rem;
+        padding: 0.5rem;
+        box-shadow: 9px 9px 18px #ACE5FD;
+        border-radius: 6px;
+    }
+
+    &__header-icon {
+        position: relative;
+        top: 0.35rem;
+        left: 0;
+        fill: white;
     }
 
     &__header {
@@ -23,7 +39,7 @@
         font-family: 'Marmelad';
         // background-image: linear-gradient(to right, #00b4d8, #48cae4, #90e0ef, #ade8f4);
         text-align: center;
-        box-shadow: 9px 9px 18px #ACE5FD;
+        // box-shadow: 9px 9px 18px #ACE5FD;
         padding: 2rem 0.5rem;
         margin: auto;
     }

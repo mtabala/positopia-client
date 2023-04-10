@@ -1,14 +1,14 @@
 import React from 'react'
 import "../KindAct/KindAct.scss"
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function KindAct({ kindActImage, kindActDescription, kindActTitle }) {
-    const api = "http://localhost:8000";
+    // const api = "http://localhost:8000";
 
-    const location = useLocation();
-    const selectedAct = location.state;
+    // const location = useLocation();
+    // const selectedAct = location.state;
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -32,7 +32,7 @@ function KindAct({ kindActImage, kindActDescription, kindActTitle }) {
     return (
         <article className="kindness__act">
             <div className="kindness__act-wrapper">
-                <img className="kindness__img" src={kindActImage} />
+                <img className="kindness__img" src={kindActImage} alt="kindness" />
             </div>
 
             <div className="kindness__text">
@@ -40,7 +40,7 @@ function KindAct({ kindActImage, kindActDescription, kindActTitle }) {
                 <p className="kindness__description"> {kindActDescription}</p>
             </div>
 
-            <button onClick={handleClick} className="kindness__btn">Select</button>
+            <button onClick={handleClick} className="kindness__btn btn">Select</button>
         </article>
     )
 }

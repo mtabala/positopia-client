@@ -6,10 +6,10 @@ import HomePage from "./pages/HomePage";
 import LoginPage from './pages/LoginPage';
 import UserProfile from './pages/UserProfilePage';
 import KindActs from './components/KindActs/KindActs';
-import ActsJournal from "./components/ActsJournal/ActsJournal";
 // import NotFoundPage from "./pages/NotFoundPage";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import KindnessJournal from './components/KindnessJournal/KindnessJournal';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
                 <Route path="/profile" element={<UserProfile />}> </Route>
                 <Route path="/profile/:id" element={<UserProfile />}> </Route>
                 <Route path="/kindness" element={<KindActs />}> </Route>
-                <Route path="/journal" element={<ActsJournal />}></Route>
+                <Route path="/profile/journal/:id" element={<KindnessJournal />}></Route>
                 {/* <Route path="*" element={<NotFoundPage />}></Route> */}
             </Routes>
             {/* <Footer /> */}

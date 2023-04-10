@@ -23,7 +23,7 @@ function UserProfileNav({ id }) {
                 </li>
 
                 <li className="user__item">
-                    <NavLink to={`/journal/${id}`} className={({ isActive }) =>
+                    <NavLink to={`/profile/journal/${id}`} className={({ isActive }) =>
                         isActive
                             ? "user__item-link user__item-link--active"
                             : "user__item-link"

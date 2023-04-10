@@ -1,0 +1,8 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.journal {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+}

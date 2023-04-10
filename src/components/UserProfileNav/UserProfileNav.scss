@@ -9,15 +9,13 @@
         background-color: rgba(6, 156, 218, 0.2117647059);
         opacity: 90%;
         box-shadow: 10px 5px 40px #069CDA;
-
-        // background: linear-gradient(to bottom, #F5F1EE, white, #caf0f8, #ACE5FD);
         padding: 3rem 0 0;
     }
 
     &__list {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        text-align: end;
         gap: 3rem;
         padding: 0.3rem 0;
     }
