@@ -39,10 +39,29 @@
         font-family: 'Marmelad';
     }
 
+    &__acts-list {
+        margin: 0.5rem 0 0;
+    }
+
     &__input {
         color: #069CDA;
         font-size: 0.9rem;
         font-family: 'Marmelad';
+
+        &--acts {
+            font-size: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: space-between;
+            font-family: 'ABeeZee';
+            margin-bottom: 0.3rem;
+        }
+    }
+
+    &__icon--delete {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
     }
 
     &__about {

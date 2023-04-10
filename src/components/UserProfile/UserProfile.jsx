@@ -1,6 +1,6 @@
 import React from 'react'
 import "../UserProfile/UserProfile.scss"
-import heart from "../../assets/icons/heart.svg"
+import deleteIcon from "../../assets/icons/delete.svg";
 
 function UserProfile({ id, image, name, description, rank, location, currentActs, completedActs }) {
     return (
@@ -8,7 +8,7 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
             <section className="user__profile">
                 <article className="user__info">
                     <div className="user__img">
-                        <img className="user__avatar" src={image} />
+                        <img className="user__avatar" src={image} alt="user avatar" />
                     </div>
 
                     <div className="user__data">
@@ -32,7 +32,7 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
                         <h4 className="user__title"> Current Acts of Kindness: </h4>
                         <ul className="user__acts-list">
                             {currentActs.map(act => (
-                                <li key={act} className="user__input">◊ {act}</li>
+                                <li key={act} className="user__input user__input--acts">◊ {act} <img className="user__icon--delete" src={deleteIcon} alt="delete icon" /></li>
                             ))}
                         </ul>
                     </div>

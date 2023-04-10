@@ -1,7 +1,7 @@
 import "./Journal.scss";
 import add from "../../assets/icons/add.svg";
 
-function Journal() {
+function Journal({ id }) {
     return (
         <article className="journal__write">
             <div className="journal__title">

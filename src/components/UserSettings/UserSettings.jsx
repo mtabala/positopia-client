@@ -57,7 +57,7 @@ function UserSettings() {
 
     return (
         <section className="settings">
-            <UserProfileNav />
+            <UserProfileNav id={id} />
             {user && (<div className="settings__wrapper">
                 {users
                     .filter((obj) => (
