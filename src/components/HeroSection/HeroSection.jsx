@@ -18,7 +18,7 @@ function HeroSection() {
                 <h1 className="hero__title">Welcome to <span className="hero__underline">Positopia</span> 🕊</h1>
                 <p className="hero__subtitle">Join our world of positive change and empower yourself and others
                     to make a difference in the world.</p>
-                <button className="hero__btn" onClick={handleClick}> Join now </button>
+                <button className="hero__btn btn" onClick={handleClick}> Join now </button>
             </div>
 
             <div className="hero__video">

@@ -9,8 +9,6 @@
 
     @include tablet {
         background-image: url(../../assets/images/hero_background.jpg);
-        // background-image: url(../../assets/images/wave-color.png);
-        // background-size: cover;
         flex-direction: row;
         padding: 0 0 1rem 2rem;
         gap: 3rem;
@@ -25,7 +23,7 @@
 
     &__wrapper {
         position: relative;
-        top: -14rem;
+        top: -28rem;
         width: 85%;
         display: flex;
         flex-direction: column;
@@ -63,7 +61,6 @@
     &__underline {
         font-family: 'Marmelad';
         position: relative;
-        // margin-right: 1rem;
 
         &:after {
             content: "";
@@ -77,15 +74,8 @@
             border-radius: 50%;
 
             @include tablet {
-                // content: "";
-                // position: absolute;
                 bottom: -10px;
-                // left: 0;
                 height: 10px;
-                // width: 110%;
-                // border: solid 4px #069CDA;
-                // border-color: #069CDA transparent transparent transparent;
-                // border-radius: 50%;
             }
         }
     }
@@ -118,17 +108,10 @@
         border-radius: 8px;
         border: none;
         cursor: pointer;
-
-        @include tablet {
-            font-size: 1rem;
-            width: 7.8rem;
-            height: 2.75rem;
-            padding: 0.5rem;
-        }
     }
 
     &__video {
-        height: 60vh;
+        height: 85vh;
 
         @include tablet {
             box-shadow: -30px -25px 40px #069CDA;
@@ -143,151 +126,4 @@
             flex: 1;
         }
     }
-
-    // &__dark-blue {
-    //     color: #273F63;
-    // }
-
-    // &__light-blue {
-    //     color: #069CDA;
-
-    // }
-
-    // &__video {
-    //     width: 100%;
-    //     max-width: 100%;
-    //     height: auto;
-    //     position: relative;
-    //     z-index: -1;
-    //     top: -1rem;
-    // }
-
-    // &__wrapper {
-    //     display: flex;
-    //     flex-direction: column;
-    //     gap: 1.5rem;
-    //     width: 65%;
-    //     border-radius: 3rem;
-    //     padding: 1rem 1rem;
-    //     position: absolute;
-    //     top: 70%;
-    //     left: 39%;
-    //     transform: translate(-50%, -50%);
-    //     // background-image: linear-gradient(to right, rgba(0, 180, 216, 0.4), rgba(72, 202, 228, 0.4), rgba(144, 224, 239, 0.4), rgba(173, 232, 244, 0.4), rgba(202, 240, 248, 0.4));
-    //     transition: background-position 2s ease-in-out;
-
-    //     &:hover {
-    //         background-image: linear-gradient(to left, $background, $background-primary, $background-secondary);
-    //         background-size: 200% auto;
-    //         background-position: 100% center;
-    //     }
-
-    //     @include desktop {
-    //         display: flex;
-    //         flex-direction: column;
-    //         gap: 1.5rem;
-    //         width: 40%;
-    //         border-radius: 3rem;
-    //         padding: 1rem 2rem;
-    //         position: absolute;
-    //         top: 50%;
-    //         left: 30%;
-    //         transform: translate(-50%, -50%);
-    //         // background-image: linear-gradient(to right,
-    //         //         rgba(0, 180, 216, 0.4),
-    //         //         rgba(72, 202, 228, 0.4),
-    //         //         rgba(144, 224, 239, 0.4),
-    //         //         rgba(173, 232, 244, 0.4),
-    //         //         rgba(202, 240, 248, 0.4));
-    //         transition: background-position 2s ease-in-out;
-
-    //         &:hover {
-    //             // background-image: linear-gradient(to left, $background, $background-primary, $background-secondary);
-    //             background-image: linear-gradient(to right,
-    //                     rgba(0, 180, 216, 0.4),
-    //                     rgba(72, 202, 228, 0.4),
-    //                     rgba(144, 224, 239, 0.4),
-    //                     rgba(173, 232, 244, 0.4),
-    //                     rgba(202, 240, 248, 0.4));
-    //             background-size: 200% auto;
-    //             background-position: 100% center;
-    //         }
-    //     }
-    // }
-
-    // &__title {
-    //     color: $font-light;
-    //     font-size: 1.1rem;
-
-    //     @include desktop {
-    //         font-size: 2.7rem;
-    //     }
-
-    //     // text-shadow: 2px 2px 4px rgba(11, 48, 91, 0.5);
-    // }
-
-    // &__subtitle {
-    //     color: $button-primary;
-    //     font-size: 0.7rem;
-
-    //     @include desktop {
-    //         font-size: 1.3rem;
-    //     }
-    // }
-
-    // &__btn {
-    //     position: absolute;
-    //     top: 92%;
-    //     left: 35.5%;
-    //     transform: translate(-50%, -50%);
-    //     padding: 0px 5rem;
-    //     background-image: linear-gradient(to right, #0077b6, #0096c7, #00b4d8, #48cae4, #90e0ef, #ade8f4);
-    //     background-size: 200% auto;
-    //     color: #023e8a;
-    //     text-transform: uppercase;
-    //     font-weight: 600;
-    //     font-size: 0.68rem;
-    //     padding: 0.7rem 0.5rem;
-    //     border-radius: 6px;
-    //     background-position: 100% center;
-    //     cursor: pointer;
-    //     border: none;
-    //     transition: background-position 2s ease-in-out;
-
-    //     &:hover {
-    //         background-image: linear-gradient(to left, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
-    //         background-size: 200% auto;
-    //         color: $background-secondary;
-    //         text-decoration: none;
-    //         font-weight: 600;
-    //         padding: 0.7rem 0.5rem;
-    //         border-radius: 6px;
-    //         background-position: 100% center;
-    //     }
-
-
-    //     @include desktop {
-    //         position: absolute;
-    //         top: 77%;
-    //         font-size: 1.15rem;
-    //         left: 19%;
-    //         transform: translate(-50%, -50%);
-    //         padding: 0px 5rem;
-    //         background-image: linear-gradient(to right, $font-light, $button-primary, $button-secondary, $background, $background-primary, $background-secondary);
-    //         background-size: 200% auto;
-    //         color: $font-secondary;
-    //         text-transform: uppercase;
-    //         font-weight: 600;
-    //         padding: 1rem 3rem;
-    //         border-radius: 6px;
-    //         background-position: 100% center;
-    //         cursor: pointer;
-    //         border: none;
-    //         transition: background-position 2s ease-in-out;
-
-    //         &:hover {
-    //             padding: 1rem 3rem;
-    //         }
-    //     }
-    // }
 }
