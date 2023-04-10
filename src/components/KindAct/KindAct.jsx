@@ -18,7 +18,7 @@ function KindAct({ kindActImage, kindActDescription, kindActTitle }) {
 
 
             axios
-                .post('http://localhost:8000/profile/journal', {
+                .post('http://localhost:8000/profile/profile', {
                     kindActTitle: kindActTitle,
                     id: userId,
                 })

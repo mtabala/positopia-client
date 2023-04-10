@@ -10,6 +10,7 @@ import KindActs from './components/KindActs/KindActs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import KindnessJournal from './components/KindnessJournal/KindnessJournal';
+import UserSettings from './components/UserSettings/UserSettings';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/profile/:id" element={<UserProfile />}> </Route>
                 <Route path="/kindness" element={<KindActs />}> </Route>
                 <Route path="/profile/journal/:id" element={<KindnessJournal />}></Route>
+                <Route path="/profile/settings/:id" element={<UserSettings />}></Route>
                 {/* <Route path="*" element={<NotFoundPage />}></Route> */}
             </Routes>
             {/* <Footer /> */}

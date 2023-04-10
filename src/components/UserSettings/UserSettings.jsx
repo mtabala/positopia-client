@@ -1,10 +1,15 @@
 import React from 'react'
 import UserProfileNav from '../UserProfileNav/UserProfileNav';
+import ProfileSettings from '../ProfileSettings/ProfileSettings';
+import UserSideBar from '../UserSideBar/UserSideBar';
 
-function UserSettings({ id }) {
+function UserSettings() {
     return (
-        <>
-            <UserProfileNav id={id} />  </>
+        <section className="settings">
+            <UserProfileNav />
+            <ProfileSettings />
+            <UserSideBar />
+        </section>
     )
 }
 
