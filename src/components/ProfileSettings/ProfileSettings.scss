@@ -1,2 +1,105 @@
-@use "./styles/partials/variables" as *;
-@use "./styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.edit {
+    flex: 9;
+
+    &__wrapper {
+        padding: 1rem 2rem;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title-update {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: $font-primary;
+        font-family: 'Marmelad';
+    }
+
+    &__title-delete {
+        color: rgb(241, 73, 73);
+        font-size: 0.8rem;
+        cursor: pointer;
+        font-family: 'Marmelad';
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__photo {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    &__photo>img {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    &__photo-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        padding: 0.18rem;
+        background-color: $font-secondary;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    &__label {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        color: $font-primary;
+        font-family: 'ABeeZee';
+        font-weight: 600;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+    }
+
+    &__inputs-wrapper {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__input {
+        color: $font-secondary;
+        margin: 5px 0;
+        height: 25px;
+        padding: 0 0.5rem;
+        font-family: 'ABeeZee';
+        font-size: 0.8rem;
+        border: none;
+        border: 0.5px solid $font-secondary;
+        background-image: url(http://localhost:3000/static/media/hero_background.587b2cf….jpg);
+        background-blend-mode: darken;
+        background-color: rgba(6, 156, 218, 0.2117647059);
+        opacity: 90%;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px $font-secondary;
+
+        &--about {
+            resize: none;
+            height: 7rem;
+        }
+    }
+}

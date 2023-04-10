@@ -1,2 +1,15 @@
-@use "./styles/partials/variables" as *;
-@use "./styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.settings {
+    display: flex;
+    width: 100%;
+    height: 87vh;
+
+    &__wrapper {
+        display: flex;
+        background-image: url(../../assets/images/hero_background.jpg);
+        padding: 1.5rem 2rem 1rem;
+        width: 100%;
+    }
+}

@@ -1,2 +1,43 @@
-@use "./styles/partials/variables" as *;
-@use "./styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.sidebar {
+    flex: 3;
+    border-radius: 10px;
+    background-image: url(../../assets/images/hero_background.jpg);
+    background-blend-mode: darken;
+    background-color: rgba(6, 156, 218, 0.2117647059);
+    opacity: 90%;
+    box-shadow: 10px 5px 40px #069CDA;
+    padding: 0.5rem 1rem;
+    height: 480px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    &__img {
+        width: 150px;
+        margin: auto;
+        border-radius: 20px;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        color: $font-primary;
+    }
+
+    &__list-title {
+        font-weight: 600;
+    }
+
+    &__text,
+    &__list-item {
+        font-family: 'Marmelad';
+        font-size: 0.8rem;
+        color: $font-secondary;
+    }
+}
