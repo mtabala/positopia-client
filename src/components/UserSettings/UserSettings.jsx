@@ -64,10 +64,10 @@ function UserSettings() {
                         obj.id === user.id
                     ))
                     .map((user) => (
-                        <>
+                        <div className="settings__key-wrap" key={user.id}>
                             <ProfileSettings {...user} />
                             <UserSideBar {...user} />
-                        </>
+                        </div>
                     ))}
             </div>)}
         </section>

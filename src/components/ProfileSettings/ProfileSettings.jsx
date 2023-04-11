@@ -1,8 +1,52 @@
 import React from 'react'
 import "./ProfileSettings.scss"
+// import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
+import { useState } from 'react';
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 
-function ProfileSettings({ name, location, email, image }) {
+function ProfileSettings({ id, name, location, email, image }) {
+    const api = "http://localhost:8000";
+    const [file, setFile] = useState(null);
+
+    const [userName, setUserName] = useState("");
+    const [userEmail, setUserEmail] = useState("");
+    const [userPassword, setUserPassword] = useState("");
+    const [userLocation, setUserLocation] = useState("");
+    const [userDescription, setUserDescription] = useState("");
+
+
+    const handleUpload = (e) => {
+        console.log(e.target.files[0])
+        setFile(e.target.files[0])
+        const data = new FormData();
+        data.append("file", e.target.files[0]);
+        data.append("id", id);
+        // updatedUser.avatar = filename;
+
+        const res = axios.post(`${api}/profile/settings`, data, {
+            headers: {
+                "Content-Type": "multipart/data",
+            },
+        })
+    }
+
+    const handleUpdate = (e) => {
+        setUserName(e.target.name.value)
+        console.log(e.target.name.value)
+    }
+
+    const updateUser = (e) => {
+        axios.patch(`${api}/profile/settings/${id}`, {
+            name: userName,
+            password: userPassword,
+            location: userLocation,
+            email: userEmail,
+            description: userDescription,
+        })
+    }
+
     return (
         <div className="edit">
             <div className="edit__wrapper">
@@ -10,7 +54,6 @@ function ProfileSettings({ name, location, email, image }) {
                     <span className="edit__title-update">Update Your Account</span>
                     <span className="edit__title-delete">Delete Account</span>
                 </div>
-
                 <form className="edit__form" >
                     <label className="edit__label">Profile Picture</label>
                     <div className="edit__photo">
@@ -24,16 +67,23 @@ function ProfileSettings({ name, location, email, image }) {
                         <input
                             type="file"
                             id="fileInput"
+                            name="fileInput"
                             style={{ display: "none" }}
+                            onChange={handleUpload}
                         />
                     </div>
+                </form>
+
+                <form className="edit__form-wrapper" >
 
                     <div className="edit__inputs-wrapper">
                         <div className="edit__inputs">
                             <label className="edit__label">Username</label>
                             <input className="edit__input"
                                 type="text"
+                                name={name}
                                 placeholder={name}
+                                onChange={handleUpdate}
                             />
                             <label className="edit__label">Email</label>
                             <input className="edit__input"
@@ -59,7 +109,7 @@ function ProfileSettings({ name, location, email, image }) {
                         </div>
                     </div>
 
-                    <button className="edit__btn btn" type="submit">
+                    <button onClick={handleUpdate} className="edit__btn btn" type="submit">
                         Update
                     </button>
                 </form>

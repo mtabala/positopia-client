@@ -9,7 +9,13 @@
     &__wrapper {
         display: flex;
         background-image: url(../../assets/images/hero_background.jpg);
+        width: 100%;
         padding: 1.5rem 2rem 1rem;
+    }
+
+    &__key-wrap {
+        display: flex;
+        background-image: url(../../assets/images/hero_background.jpg);
         width: 100%;
     }
 }
