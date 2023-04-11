@@ -1,13 +1,15 @@
 import React from 'react'
 import "./ProfileSettings.scss"
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 
 function ProfileSettings({ id, name, location, email, image }) {
     const api = "http://localhost:8000";
+    const navigate = useNavigate()
     const [file, setFile] = useState(null);
 
     const [userName, setUserName] = useState("");
@@ -34,20 +36,19 @@ function ProfileSettings({ id, name, location, email, image }) {
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        // setUserName(e.target.name.value)
-        // console.log(e.target.name.value)
-
-        console.log('USER NAME: ', userName)
+        const notify = () => toast("Your profile has been updated ❤");
 
         axios.patch(`${api}/profile/settings/${id}`, {
             name: userName,
-            // password: userPassword,
-            // location: userLocation,
-            // email: userEmail,
-            // description: userDescription,
+            password: userPassword,
+            location: userLocation,
+            email: userEmail,
+            description: userDescription,
+        }).then((res) => {
+            notify();
+            window.location.reload();
         })
             .catch(err => console.log('err: ', err))
-
     }
 
     const updateUser = (e) => {
@@ -61,6 +62,10 @@ function ProfileSettings({ id, name, location, email, image }) {
     }
 
     console.log('user name: ', userName)
+    console.log('user email: ', userEmail)
+    console.log('user password: ', userPassword)
+    console.log('user location: ', userLocation)
+    console.log('user description: ', userDescription)
 
     return (
         <div className="edit">
@@ -105,10 +110,16 @@ function ProfileSettings({ id, name, location, email, image }) {
                             <input className="edit__input"
                                 type="email"
                                 placeholder={email}
+                                name={email}
+                                value={userEmail}
+                                onChange={(e) => setUserEmail(e.target.value)}
                             />
                             <label className="edit__label">Password</label>
                             <input className="edit__input"
                                 type="password"
+                                // name={password}
+                                // value={password}
+                                onChange={(e) => setUserPassword(e.target.value)}
                             />
                         </div>
                         <div className="edit__inputs">
@@ -116,11 +127,17 @@ function ProfileSettings({ id, name, location, email, image }) {
                             <textarea className="edit__input edit__input--about"
                                 type="text"
                                 placeholder="About Me"
+                                // name={description}
+                                value={userDescription}
+                                onChange={(e) => setUserDescription(e.target.value)}
                             />
                             <label className="edit__label">Location</label>
                             <input className="edit__input"
                                 type="text"
                                 placeholder={location}
+                                name={location}
+                                value={userLocation}
+                                onChange={(e) => setUserLocation(e.target.value)}
                             />
                         </div>
                     </div>
