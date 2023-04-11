@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import React, { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
@@ -17,11 +17,12 @@ import google from "../../assets/icons/google.svg"
 function SignInForm() {
     const api = "http://localhost:8000";
     const [isLogin, setIsLogin] = useState(true);
+    const formUseRef = useRef();
     const navigate = useNavigate()
-    const notify = () => toast("Welcome back ❤ We missed you!");
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const notify = () => toast("Welcome back ❤ We missed you!");
 
         axios.post(`${api}/profile/login`, {
             user: e.target.username.value,
@@ -37,16 +38,40 @@ function SignInForm() {
         })
     };
 
+    const handleRegistration = (e) => {
+        e.preventDefault();
+        const notify = () => toast("Welcome ❤ Update your profile!");
+
+        const form = formUseRef.current;
+        const name = form.name;
+        const email = form.email;
+        const password = form.password;
+
+        console.log(name)
+        console.log(email)
+        console.log(password)
+
+        axios.post(`${api}/profile`, {
+            name: name.value,
+            email: email.value,
+            password: password.value
+        }).then(res => {
+            const NewUser = res.data;
+            notify();
+            sessionStorage.setItem("userId", NewUser.id);
+            navigate(`/profile/settings/${NewUser.id}`);
+        }).catch((error) => {
+            console.log("error: ", error);
+        })
+    };
+
     const handleToggleForm = () => {
         setIsLogin(!isLogin);
     };
 
-    const containerClassName = isLogin ? "container" : "container sign-up-mode";
-
     return (
         <>
-            <section className={containerClassName}>
-                {/* <ToastContainer /> */}
+            <section className="container">
                 <div className="forms">
 
                     <div className="forms__wrapper">
@@ -61,7 +86,6 @@ function SignInForm() {
                                     <img className="form__icon" src={lock} alt="lock icon" />
                                     <input className="form__input" name="password" type="password" placeholder="Password" />
                                 </div>
-                                {/* <Link to="/profile" className="form__btn btn"> Login </Link> */}
                                 <button className="form__btn btn"> Login </button>
 
 
@@ -79,21 +103,21 @@ function SignInForm() {
                                 </div>
                             </form>
                         ) : (
-                            <form className="form" onSubmit={handleSubmit}>
+                            <form className="form" onSubmit={handleRegistration} ref={formUseRef}>
                                 <h2 className="form__title">Sign up</h2>
                                 <div className="form__inputs">
                                     <img className="form__icon" src={user} alt="user icon" />
-                                    <input className="form__input" type="text" placeholder="Username" />
+                                    <input className="form__input" name="name" type="text" placeholder="Username" />
                                 </div>
                                 <div className="form__inputs">
                                     <img className="form__icon" src={mail} alt="email icon" />
-                                    <input className="form__input" type="email" placeholder="Email" />
+                                    <input className="form__input" name="email" type="email" placeholder="Email" />
                                 </div>
                                 <div className="form__inputs">
                                     <img className="form__icon" src={lock} alt="lock icon" />
-                                    <input className="form__input" type="password" placeholder="Password" />
+                                    <input className="form__input" name="password" type="password" placeholder="Password" />
                                 </div>
-                                <Link to="/profile" className="form__btn btn"> Sign Up </Link>
+                                <button className="form__btn btn"> Sign Up </button>
 
                                 <p className="form__text text">Or Sign Up with social platforms</p>
                                 <div className="form__social">
@@ -118,11 +142,9 @@ function SignInForm() {
                             <div className="panel__content">
                                 <h3 className="panel__title">New here?</h3>
                                 <p className="panel__text text">Join the community of socially conscious individuals who prioritize kindness and compassion in their daily lives. When we're kind we inspire others to be kind. So be kind, share your stories and watch how you inspire others.</p>
-                                {/* <Link to="/signup" className="panel__btn-link"> */}
                                 <button className="panel__btn btn" onClick={handleToggleForm}>
                                     Join Positopia
                                 </button>
-                                {/* </Link> */}
                             </div>
                             <img src={signin} className="panel__img" alt="sign in" />
                         </div>
