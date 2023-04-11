@@ -55,8 +55,10 @@ function SignInForm() {
             name: name.value,
             email: email.value,
             password: password.value
-        }).then(res => {
+        }).then((res) => {
             const NewUser = res.data;
+            console.log(res)
+            // console.log(NewUser)
             notify();
             sessionStorage.setItem("userId", NewUser.id);
             navigate(`/profile/settings/${NewUser.id}`);
