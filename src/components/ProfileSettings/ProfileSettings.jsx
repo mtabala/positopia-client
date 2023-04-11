@@ -33,8 +33,21 @@ function ProfileSettings({ id, name, location, email, image }) {
     }
 
     const handleUpdate = (e) => {
-        setUserName(e.target.name.value)
-        console.log(e.target.name.value)
+        e.preventDefault();
+        // setUserName(e.target.name.value)
+        // console.log(e.target.name.value)
+
+        console.log('USER NAME: ', userName)
+
+        axios.patch(`${api}/profile/settings/${id}`, {
+            name: userName,
+            // password: userPassword,
+            // location: userLocation,
+            // email: userEmail,
+            // description: userDescription,
+        })
+            .catch(err => console.log('err: ', err))
+
     }
 
     const updateUser = (e) => {
@@ -46,6 +59,8 @@ function ProfileSettings({ id, name, location, email, image }) {
             description: userDescription,
         })
     }
+
+    console.log('user name: ', userName)
 
     return (
         <div className="edit">
@@ -83,7 +98,8 @@ function ProfileSettings({ id, name, location, email, image }) {
                                 type="text"
                                 name={name}
                                 placeholder={name}
-                                onChange={handleUpdate}
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}
                             />
                             <label className="edit__label">Email</label>
                             <input className="edit__input"
@@ -97,7 +113,7 @@ function ProfileSettings({ id, name, location, email, image }) {
                         </div>
                         <div className="edit__inputs">
                             <label className="edit__label">About me</label>
-                            <input className="edit__input edit__input--about"
+                            <textarea className="edit__input edit__input--about"
                                 type="text"
                                 placeholder="About Me"
                             />
