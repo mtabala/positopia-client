@@ -9,6 +9,8 @@ function UserProfilePage() {
 
     const [users, setUsers] = useState([]); // all users
     const [user, setUser] = useState(null);
+    const [currentActs, setCurrentActs] = useState([]);
+
     const { id } = useParams();
 
     // Define useEffect hook to get all users from the API
@@ -52,6 +54,24 @@ function UserProfilePage() {
             })
     };
 
+    // Define onDeleteCurrentAct function
+    console.log(id);
+
+    const onDeleteCurrentAct = (act) => {
+        console.log(act);
+        axios.delete(`${api}/profile/${id}/${act}`)
+            .then((data) => {
+                // Update the state to remove the deleted act from the current acts list
+                getUsers(id);
+
+            })
+            .catch((err) => {
+                console.error("Error deleting act:", err);
+            });
+    };
+
+    console.log(id);
+
     return (
         <main className="user">
             <UserProfileNav id={id} />
@@ -62,7 +82,9 @@ function UserProfilePage() {
                     ))
                     .map((user) => (
                         <>
-                            <UserProfile {...user} />
+                            <UserProfile key={id} currentActs={currentActs}
+                                setCurrentActs={setCurrentActs}
+                                onDeleteCurrentAct={onDeleteCurrentAct} {...user} />
                         </>
                     ))}
             </section>)}

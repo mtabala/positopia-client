@@ -45,8 +45,8 @@ function ProfileSettings({ id, name, location, email, image }) {
             email: userEmail,
             description: userDescription,
         }).then((res) => {
-            notify();
             window.location.reload();
+            notify();
         })
             .catch(err => console.log('err: ', err))
     }

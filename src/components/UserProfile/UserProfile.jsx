@@ -1,8 +1,12 @@
-import React from 'react'
-import "../UserProfile/UserProfile.scss"
+import React, { useState } from 'react';
+import "../UserProfile/UserProfile.scss";
 import deleteIcon from "../../assets/icons/delete.svg";
 
-function UserProfile({ id, image, name, description, rank, location, currentActs, completedActs }) {
+function UserProfile({ id, image, name, description, rank, location, currentActs, completedActs, onDeleteCurrentAct, setCurrentActs }) {
+    const handleDeleteCurrentAct = (index) => {
+        onDeleteCurrentAct(index);
+    }
+
     return (
         <>
             <section className="user__profile">
@@ -31,8 +35,17 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
                     <div className="user__current">
                         <h4 className="user__title"> Current Acts of Kindness: </h4>
                         <ul className="user__acts-list">
-                            {currentActs.map(act => (
-                                <li key={act} className="user__input user__input--acts">◊ {act} <img className="user__icon--delete" src={deleteIcon} alt="delete icon" /></li>
+                            {currentActs.map((act, index) => (
+                                <li key={act} className="user__input user__input--acts">
+                                    ◊ {act}
+                                    <img
+                                        className="user__icon--delete"
+                                        src={deleteIcon}
+                                        id={id}
+                                        alt="delete icon"
+                                        onClick={() => handleDeleteCurrentAct(index)}
+                                    />
+                                </li>
                             ))}
                         </ul>
                     </div>
