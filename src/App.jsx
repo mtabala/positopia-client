@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import KindnessJournal from './components/KindnessJournal/KindnessJournal';
 import UserSettings from './components/UserSettings/UserSettings';
+import AboutUsPage from './pages/AboutUsPage';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
+                <Route path="/about" element={<AboutUsPage />}></Route>
                 <Route path="/login" element={<LoginPage />}></Route>
                 <Route path="/profile" element={<UserProfile />}> </Route>
                 <Route path="/profile/:id" element={<UserProfile />}> </Route>

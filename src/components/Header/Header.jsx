@@ -24,7 +24,6 @@ function Header() {
 
             <nav className="navbar">
                 <img src={menu} className="navbar__icon navbar__icon--menu" onClick={() => setMenuOpen(!menuOpen)} />
-                {/* <img src={xmenu} className="navbar__icon navbar__icon--xmenu" /> */}
                 <ul className={menuOpen ? "navbar__list" : "navbar__list--closed"}>
                     <li className="navbar__item">
                         <NavLink
@@ -41,30 +40,16 @@ function Header() {
 
                     <li className="navbar__item">
                         <NavLink
-                            to="/contact"
+                            to="/about"
                             className={({ isActive }) =>
                                 isActive
                                     ? "navbar__link navbar__link--active"
                                     : "navbar__link"
                             }
                         >
-                            Contact Us
+                            About Us
                         </NavLink>
                     </li>
-
-                    {/* <li className="navbar__item navbar__item--dropdown">
-                        onClick={toggleDropdown}
-                        <NavLink
-                            to="/language"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? "navbar__link navbar__link--active"
-                                    : "navbar__link"
-                            }
-                        >
-                            Languages
-                        </NavLink>
-                    </li> */}
 
                     <li className="navbar__item">
                         <NavLink
