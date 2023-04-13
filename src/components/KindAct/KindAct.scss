@@ -15,6 +15,11 @@
         padding: 1rem 0.5rem 1rem;
         border-radius: 16px;
         margin: 0 0.5rem;
+
+        &:hover {
+            background-blend-mode: darken;
+            background-color: #069cda36;
+        }
     }
 
     &__img {

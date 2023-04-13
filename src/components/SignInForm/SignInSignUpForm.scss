@@ -1,17 +1,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-// .toast {
-//     position: "top-center",
-//         // autoClose: 5000,
-//         // hideProgressBar: false,
-//         // closeOnClick: true,
-//         // pauseOnHover: true,
-//         // draggable: true,
-//         // progress: undefined,
-//         // theme: "light",
-// }
-
 .container {
     display: flex;
     width: 100%;
@@ -19,9 +8,7 @@
     justify-content: center;
     gap: 5rem;
     padding: 2rem 6.5rem;
-    // background: linear-gradient(to left, #F5F1EE, white, #caf0f8, #ACE5FD);
     background-image: url(../../assets/images/hero_background.jpg);
-    // background: linear-gradient(to right, #0096c7, #00b4d8, #caf0f8, #90e0ef);
 }
 
 .forms {
@@ -46,7 +33,6 @@
     }
 
     &__inputs {
-        // background-color: $background-light;
         margin: 0.6rem 0;
         height: 3.5rem;
         border-radius: 2rem;
@@ -88,6 +74,12 @@
         font-family: 'Marmelad';
         font-size: 0.9rem;
         color: $font-primary;
+    }
+
+    &__error {
+        font-size: 0.75rem;
+        font-family: "Graphik";
+        color: rgb(217, 65, 65);
     }
 
     &__social {
