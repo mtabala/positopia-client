@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import "../UserProfile/UserProfile.scss";
 import deleteIcon from "../../assets/icons/delete.svg";
+import { ReactComponent as DoneIcon } from "../../assets/icons/done.svg";
 
-function UserProfile({ id, image, name, description, rank, location, currentActs, completedActs, onDeleteCurrentAct, setCurrentActs }) {
-    const handleDeleteCurrentAct = (index) => {
+function UserProfile({ id, image, name, description, rank, location, currentActs, onDoneCurrentAct, onDeleteCurrentAct, setCurrentActs, user }) {
+
+    console.log(user)
+    // const [done, setDone] = useState(0);
+
+    const deleteCurrentAct = (index) => {
         onDeleteCurrentAct(index);
     }
+
+    const handelDone = (index) => {
+        onDoneCurrentAct(index);
+    };
 
     return (
         <>
@@ -38,13 +47,16 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
                             {currentActs.map((act, index) => (
                                 <li key={act} className="user__input user__input--acts">
                                     ◊ {act}
-                                    <img
-                                        className="user__icon--delete"
-                                        src={deleteIcon}
-                                        id={id}
-                                        alt="delete icon"
-                                        onClick={() => handleDeleteCurrentAct(index)}
-                                    />
+                                    <div className="user__input-icons">
+                                        <DoneIcon onClick={() => handelDone(index)} className="user__icon user__icon--done" />
+                                        <img
+                                            className="user__icon user__icon--delete"
+                                            src={deleteIcon}
+                                            id={id}
+                                            alt="delete icon"
+                                            onClick={() => deleteCurrentAct(index)}
+                                        />
+                                    </div>
                                 </li>
                             ))}
                         </ul>
@@ -59,7 +71,8 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
 
                     <div className="user__stats">
                         <h4 className="user__title"> Stats</h4>
-                        <p className="user__input"> 13 Acts of Kindness completed</p>
+                        {user && <p className="user__input"> {user.completedActs.length} Acts of Kindness completed</p>}
+
                     </div>
 
                 </div>

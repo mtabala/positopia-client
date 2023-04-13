@@ -58,10 +58,25 @@
         }
     }
 
-    &__icon--delete {
+    &__input-icons {
+        display: flex;
+        gap: 0.2rem;
+    }
+
+    &__icon {
         cursor: pointer;
         width: 20px;
         height: 20px;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: translateX(2.5px);
+            transform: translateY(2.5px);
+        }
+
+        &--done {
+            color: $font-light;
+        }
     }
 
     &__about {

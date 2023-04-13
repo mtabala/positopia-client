@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import UserProfile from "../components/UserProfile/UserProfile";
 import UserProfileNav from "../components/UserProfileNav/UserProfileNav";
@@ -58,8 +58,21 @@ function UserProfilePage() {
     console.log(id);
 
     const onDeleteCurrentAct = (act) => {
-        console.log(act);
-        axios.delete(`${api}/profile/${id}/${act}`)
+        console.log("delete act ", act);
+        axios.put(`${api}/profile/${id}/${act}`)
+            .then((data) => {
+                // Update the state to remove the deleted act from the current acts list
+                getUsers(id);
+
+            })
+            .catch((err) => {
+                console.error("Error deleting act:", err);
+            });
+    };
+
+    const onDoneCurrentAct = (act) => {
+        console.log("done act", act)
+        axios.put(`${api}/profile/done/${id}/${act}`)
             .then((data) => {
                 // Update the state to remove the deleted act from the current acts list
                 getUsers(id);
@@ -83,6 +96,8 @@ function UserProfilePage() {
                     .map((user) => (
                         <>
                             <UserProfile key={id} currentActs={currentActs}
+                                user={user}
+                                onDoneCurrentAct={onDoneCurrentAct}
                                 setCurrentActs={setCurrentActs}
                                 onDeleteCurrentAct={onDeleteCurrentAct} {...user} />
                         </>
