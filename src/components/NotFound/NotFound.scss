@@ -1,0 +1,41 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.notfound {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    padding: 3rem 6.5rem;
+    gap: 3rem;
+    background-image: url(../../assets/images/hero_background.jpg);
+
+    &__wrapper {
+        flex: 7;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    &__title,
+    &__subtitle {
+        font-family: 'Marmelad';
+        color: $font-primary;
+        font-size: 3rem;
+    }
+
+    &__title {
+        font-size: 4rem;
+    }
+
+    &__subtext {
+        font-family: 'Marmelad';
+        font-size: 1.5rem;
+        color: $font-secondary;
+        margin: 1rem 0;
+    }
+
+    &__img {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+}

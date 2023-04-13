@@ -1,0 +1,82 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.user {
+    &__nav {
+        width: 25%;
+        background-image: url(../../assets/images/hero_background.jpg);
+        background-blend-mode: darken;
+        background-color: rgba(6, 156, 218, 0.2117647059);
+        opacity: 90%;
+        box-shadow: 10px 5px 40px #069CDA;
+        padding: 3rem 0 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        gap: 3rem;
+        padding: 0.3rem 0;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__icon-space {
+        font-family: 'Marmelad';
+        padding-left: 0.2rem;
+    }
+
+    &__item-link {
+        font-family: 'Marmelad';
+        color: #023e8a;
+        font-weight: 400;
+        font-size: 1rem;
+        border-radius: 8px;
+        padding: 5px;
+
+        transition: box-shadow 0.3s ease-in-out;
+
+        &--active {
+            font-family: 'Marmelad';
+            color: #023e8a;
+            font-weight: 400;
+            font-size: 1rem;
+            border-radius: 8px;
+            padding: 5px;
+
+            transition: box-shadow 0.3s ease-in-out;
+
+            // transform: translateX(10px);
+            text-transform: uppercase;
+
+            box-shadow: 0px 0px 20px #069CDA;
+            font-weight: 600;
+
+
+        }
+
+        &:hover {
+            // transform: translateX(10px);
+            text-transform: uppercase;
+
+            box-shadow: 0px 0px 20px #069CDA;
+            font-weight: 600;
+
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
+    }
+}

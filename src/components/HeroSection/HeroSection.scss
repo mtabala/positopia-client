@@ -1,0 +1,129 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    @include tablet {
+        background-image: url(../../assets/images/hero_background.jpg);
+        flex-direction: row;
+        padding: 0 0 1rem 2rem;
+        gap: 3rem;
+        max-height: 85vh;
+    }
+
+    @include desktop {
+        padding-left: 7rem;
+        max-height: 90vh;
+        gap: 5rem;
+    }
+
+    &__wrapper {
+        position: relative;
+        top: -28rem;
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        order: 2;
+
+        @include tablet {
+            top: 0;
+            order: 0;
+            width: auto;
+            gap: 1.5rem;
+        }
+
+        @include desktop {
+            width: 59%;
+        }
+    }
+
+    &__title {
+        font-family: 'Marmelad';
+        color: #273F63;
+        font-weight: 400;
+
+        @include tablet {
+            font-size: 3rem;
+            line-height: 4.2rem;
+        }
+
+        @include desktop {
+            font-size: 3.9rem;
+            line-height: 4.6rem;
+        }
+    }
+
+    &__underline {
+        font-family: 'Marmelad';
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            height: 8px;
+            width: 110%;
+            border: solid 4px #069CDA;
+            border-color: #069CDA transparent transparent transparent;
+            border-radius: 50%;
+
+            @include tablet {
+                bottom: -10px;
+                height: 10px;
+            }
+        }
+    }
+
+    &__subtitle {
+        color: #045E83;
+        font-family: 'ABeeZee';
+        font-weight: 400;
+        font-size: 0.9rem;
+
+        @include tablet {
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+
+        @include desktop {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+            padding: 0 4rem 0 0;
+        }
+    }
+
+    &__btn {
+        color: white;
+        line-height: 1.75rem;
+        font-weight: 400;
+        width: 6.2rem;
+        background: #045E83;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__video {
+        height: 85vh;
+
+        @include tablet {
+            box-shadow: -30px -25px 40px #069CDA;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            height: 90vh;
+            width: 65%;
+        }
+
+        @include desktop {
+            height: 85vh;
+            flex: 1;
+        }
+    }
+}

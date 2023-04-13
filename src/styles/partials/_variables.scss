@@ -1,0 +1,29 @@
+//screen sizes
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+//colors blue and shades
+// $font-primary: #03045eff;
+$font-primary: #273F63;
+// $font-secondary: #023e8aff;
+$font-secondary: #045E83;
+$font-third: #0077b6ff;
+$font-light: #069CDA;
+$button-primary: #0096c7ff;
+$button-secondary: #00b4d8ff;
+$background: #48cae4ff;
+$background-primary: #90e0efff;
+$background-secondary: #ade8f4ff;
+$background-light: #caf0f8ff;
+
+//gradient colors 
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-right: linear-gradient(90deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-bottom: linear-gradient(180deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-left: linear-gradient(270deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-top-right: linear-gradient(45deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-bottom-right: linear-gradient(135deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-top-left: linear-gradient(225deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-bottom-left: linear-gradient(315deg, #03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);
+$gradient-radial: radial-gradient(#03045eff, #023e8aff, #0077b6ff, #0096c7ff, #00b4d8ff, #48cae4ff, #90e0efff, #ade8f4ff, #caf0f8ff);

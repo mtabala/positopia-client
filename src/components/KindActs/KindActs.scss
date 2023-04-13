@@ -1,0 +1,109 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.kindness {
+    display: flex;
+    flex-direction: column;
+    padding: 0 6.5rem;
+    height: 90vh;
+    background-image: url(../../assets/images/hero_background.jpg);
+
+    &__header-link {
+        position: relative;
+        top: 3.3rem;
+        left: 1rem;
+        padding: 0.5rem;
+        box-shadow: 9px 9px 18px #ACE5FD;
+        border-radius: 6px;
+    }
+
+    &__header-icon {
+        position: relative;
+        top: 0.35rem;
+        left: 0;
+        fill: white;
+    }
+
+    &__header {
+        color: #023e8a;
+        width: 40%;
+        border-radius: 16px;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-family: 'Marmelad';
+        // background-image: linear-gradient(to right, #00b4d8, #48cae4, #90e0ef, #ade8f4);
+        text-align: center;
+        padding: 2rem 0.5rem;
+        margin: auto;
+    }
+
+    &__underline {
+        font-family: 'Marmelad';
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            height: 8px;
+            width: 110%;
+            border: solid 4px #069CDA;
+            border-color: #069CDA transparent transparent transparent;
+            border-radius: 50%;
+
+            @include tablet {
+                bottom: -19px;
+                height: 11px;
+            }
+        }
+    }
+}
+
+.slick-slider {
+    padding: 0 5rem;
+}
+
+.slick-slide {
+    filter: blur(3px);
+    transform: scale(0.8);
+    transition: 0.25s;
+}
+
+.slick-current {
+    transform: scale(1);
+    filter: blur(0);
+}
+
+.slick-slider .slick-arrow,
+.slick-slider .slick-arrow:active,
+.slick-slider .slick-arrow:hover,
+.slick-slider .slick-arrow:focus {
+    width: 50px;
+    height: 50px;
+    top: 40%;
+}
+
+.slick-slider .slick-prev {
+    left: 0;
+
+    &::before {
+        content: '<';
+        color: #045E83;
+        font-size: 50px;
+        font-weight: bold;
+        font-family: 'ABeeZee';
+    }
+}
+
+.slick-slider .slick-next {
+    right: 0;
+
+    &::before {
+        content: '>';
+        color: #045E83;
+        font-size: 50px;
+        font-weight: bold;
+        font-family: 'ABeeZee';
+    }
+}
