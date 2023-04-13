@@ -75,6 +75,10 @@
         width: 100%;
         padding: 1.5rem 1rem;
         transition: 0.5s ease-in-out;
+
+        @include desktop {
+            display: none;
+        }
     }
 
     &__list {
