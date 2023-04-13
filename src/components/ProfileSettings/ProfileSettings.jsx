@@ -83,34 +83,39 @@ function ProfileSettings({ id, image }) {
                                 type="text"
                                 name="username"
                                 placeholder="*Name"
-                                {...register("username", { required: true })}
+                                {...register("username", { required: true, pattern: /^[A-Za-z\s]+$/i })}
                             />
                             {errors.username && errors.username.type === "required" && (
                                 <span className="form__error">This field is required</span>
                             )}
-
+                            {errors.username && errors.username.type === "pattern" && (<span className="form__error">Please enter letters only</span>)}
                             <label className="edit__label">Email</label>
                             <input
                                 className="edit__input"
                                 type="email"
                                 placeholder="*Email"
                                 name="email"
-                                {...register("email", { required: true })}
+                                {...register("email", { required: true, pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i })}
                             />
                             {errors.email && errors.email.type === "required" && (
                                 <span className="form__error">This field is required</span>
                             )}
+                            {errors.email && errors.email.type === "pattern" && (<span className="form__error">Please enter a valid email address</span>)}
                             <label className="edit__label">Password</label>
                             <input
                                 className="edit__input"
                                 type="password"
                                 name="password"
                                 placeholder="*Password"
-                                {...register("password", { required: true })}
+                                {...register("password", { required: true, minLength: 6 })}
                             />
                             {errors.password && errors.password.type === "required" && (
                                 <span className="form__error">This field is required</span>
                             )}
+                            {errors.password && errors.password.type === "minLength" &&
+                                (<span className="form__error">Password must have at least 6 characters</span>
+                                )}
+
                         </div>
                         <div className="edit__inputs">
                             <label className="edit__label">About me</label>
@@ -119,22 +124,26 @@ function ProfileSettings({ id, image }) {
                                 type="text"
                                 placeholder="*Tell us about yourself"
                                 name="description"
-                                {...register("description", { required: true })}
+                                {...register("description", { required: true, minLength: 50 })}
                             />
                             {errors.description && errors.description.type === "required" && (
                                 <span className="form__error">This field is required</span>
                             )}
+                            {errors.description && errors.description.type === "minLength" &&
+                                (<span className="form__error">Description must have at least 50 characters</span>
+                                )}
                             <label className="edit__label">Location</label>
                             <input
                                 className="edit__input"
                                 type="text"
                                 placeholder="*Location"
                                 name="location"
-                                {...register("location", { required: true })}
+                                {...register("location", { required: true, pattern: /^[A-Za-z\s]+$/i })}
                             />
                             {errors.location && errors.location.type === "required" && (
                                 <span className="form__error">This field is required</span>
                             )}
+                            {errors.location && errors.location.type === "pattern" && (<span className="form__error">Please enter letters only</span>)}
                         </div>
                     </div>
 
