@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from './pages/LoginPage';
 import UserProfile from './pages/UserProfilePage';
 import KindActs from './components/KindActs/KindActs';
-// import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import KindnessJournal from './components/KindnessJournal/KindnessJournal';
@@ -28,7 +28,7 @@ function App() {
                 <Route path="/kindness" element={<KindActs />}> </Route>
                 <Route path="/profile/journal/:id" element={<KindnessJournal />}></Route>
                 <Route path="/profile/settings/:id" element={<UserSettings />}></Route>
-                {/* <Route path="*" element={<NotFoundPage />}></Route> */}
+                <Route path="*" element={<NotFoundPage />}></Route>
             </Routes>
             {/* <Footer /> */}
         </BrowserRouter>
