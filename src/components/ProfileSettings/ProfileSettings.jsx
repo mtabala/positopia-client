@@ -96,7 +96,7 @@ function ProfileSettings({ id, image }) {
     };
 
     return (
-        <main>
+        <main className="main">
             {user && (<div className="edit">
                 {users
                     .filter((obj) => (
