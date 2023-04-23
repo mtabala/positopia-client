@@ -36,7 +36,7 @@ function SignInForm() {
 
         axios
             .post(`${api}/profile/login`, {
-                user: data.username,
+                user: data.name,
                 password: data.password,
             })
             .then((res) => {
@@ -89,19 +89,19 @@ function SignInForm() {
                                     <img className="form__icon" src={user} alt="user icon" />
                                     <input
                                         className="form__input"
-                                        name="username"
+                                        name="name"
                                         type="text"
                                         placeholder="Username"
-                                        {...register("username", {
+                                        {...register("name", {
                                             required: true,
                                             pattern: /^[A-Za-z\s]+$/i,
                                         })}
                                     />
                                 </div>
-                                {errors.username && errors.username.type === "required" && (
+                                {errors.name && errors.name.type === "required" && (
                                     <span className="form__error">This field is required</span>
                                 )}
-                                {errors.username && errors.username.type === "pattern" && (
+                                {errors.name && errors.name.type === "pattern" && (
                                     <span className="form__error">Please enter letters only</span>
                                 )}
                                 <div className="form__inputs">
