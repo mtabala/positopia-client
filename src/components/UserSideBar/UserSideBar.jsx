@@ -1,4 +1,5 @@
 import "./UserSideBar.scss"
+import defaultImg from "../../assets/images/default.png";
 
 function UserSideBar({ name, rank, location, description, image }) {
 
@@ -8,7 +9,7 @@ function UserSideBar({ name, rank, location, description, image }) {
 
             <div className="sidebar__item">
                 <h3 className="sidebar__title">About Me</h3>
-                <img className="sidebar__img" src={image} alt="user" />
+                <img className="sidebar__img" src={image ? image : defaultImg} alt="user" />
                 <p className="sidebar__text">{description}</p>
             </div>
 

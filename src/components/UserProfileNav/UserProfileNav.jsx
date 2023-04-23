@@ -4,13 +4,14 @@ import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
 import { ReactComponent as CalendarIcon } from "../../assets/icons/calendar.svg";
 import { ReactComponent as JournalIcon } from "../../assets/icons/journal.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings.svg";
+import defaultImg from "../../assets/images/default.png";
 import "../UserProfileNav/UserProfileNav.scss"
 
 function UserProfileNav({ id, image, name }) {
     return (
         <aside className="user__nav">
             <div className="user__intro">
-                <img className="user__intro-photo" src={image} />
+                <img className="user__intro-photo" src={image ? image : defaultImg} />
                 <p className="user__intro-name"> {name}</p>
             </div>
             <ul className="user__list">

@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useState } from "react";
 import { ReactComponent as UserIcon } from "../../assets/icons/user.svg";
-
+import defaultImg from "../../assets/images/default.png";
 import { useForm } from "react-hook-form";
 
 function ProfileSettings({ id, image }) {
@@ -112,7 +112,7 @@ function ProfileSettings({ id, image }) {
                                 <form className="edit__form">
                                     <label className="edit__label">Profile Picture</label>
                                     <div className="edit__photo">
-                                        <img src={image} alt="user avatar" />
+                                        <img src={image ? image : defaultImg} alt="user avatar" />
                                         <label className="edit__label" htmlFor="fileInput">
                                             <UserIcon className="edit__photo-icon" />
                                         </label>

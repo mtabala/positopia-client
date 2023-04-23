@@ -2,6 +2,7 @@
 import "../UserProfile/UserProfile.scss";
 import deleteIcon from "../../assets/icons/delete.svg";
 import { ReactComponent as DoneIcon } from "../../assets/icons/done.svg";
+import defaultImg from "../../assets/images/default.png";
 
 function UserProfile({ id, image, name, description, rank, location, currentActs, onDoneCurrentAct, onDeleteCurrentAct, setCurrentActs, user }) {
 
@@ -21,7 +22,7 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
             <section className="user__profile">
                 <article className="user__info">
                     <div className="user__img">
-                        <img className="user__avatar" src={image} alt="user avatar" />
+                        <img className="user__avatar" src={image ? image : defaultImg} alt="user avatar" />
                     </div>
 
                     <div className="user__data">
