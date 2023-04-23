@@ -32,6 +32,12 @@
         padding: 1rem;
     }
 
+    &__current {
+        padding: 1.5rem;
+        border: 1px solid #023e8a;
+        border-radius: 8px;
+    }
+
     &__title {
         color: #023e8a;
         font-size: 1.1rem;
@@ -80,7 +86,10 @@
     }
 
     &__about {
-        width: 74%;
+        width: 65%;
+        border-radius: 8px;
+        border: 1px solid #023e8a;
+        padding: 1.5rem;
     }
 
     &__bio {
@@ -88,5 +97,12 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    &__stats {
+        padding: 1.5rem;
+        border: 1px solid #023e8a;
+        border-radius: 8px;
+        flex: 1;
     }
 }
