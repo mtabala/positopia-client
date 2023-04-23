@@ -6,9 +6,13 @@ import { ReactComponent as JournalIcon } from "../../assets/icons/journal.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/icons/settings.svg";
 import "../UserProfileNav/UserProfileNav.scss"
 
-function UserProfileNav({ id }) {
+function UserProfileNav({ id, image, name }) {
     return (
         <aside className="user__nav">
+            <div className="user__intro">
+                <img className="user__intro-photo" src={image} />
+                <p className="user__intro-name"> {name}</p>
+            </div>
             <ul className="user__list">
                 <li className="user__item">
                     <NavLink to={`/profile/${id}`}

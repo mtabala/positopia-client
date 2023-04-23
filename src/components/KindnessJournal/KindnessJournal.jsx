@@ -56,7 +56,7 @@ function KindnessJournal() {
     return (
         <>
             <section className="journal">
-                <UserProfileNav user={user} id={id} />
+                <UserProfileNav user={user} id={id} {...user} />
 
                 <Journal id={id} />
             </section>
