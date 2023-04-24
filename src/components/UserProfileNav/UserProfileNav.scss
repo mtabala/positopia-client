@@ -5,6 +5,11 @@
 
     &__nav-wrapper {
         position: fixed;
+        padding: 2rem 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 17.5%;
     }
 
     &__intro-photo {
@@ -31,10 +36,6 @@
         background-color: rgba(6, 156, 218, 0.2117647059);
         opacity: 90%;
         box-shadow: 10px 5px 40px #069CDA;
-        padding: 2rem 0 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
     }
 
     &__list {

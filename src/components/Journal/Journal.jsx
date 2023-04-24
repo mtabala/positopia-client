@@ -1,7 +1,7 @@
 import "./Journal.scss";
 import add from "../../assets/icons/add.svg";
 
-function Journal({ id }) {
+function Journal({ user }) {
     return (
         <article className="journal__write">
             <h2 className="journal__header-first"><span className="journal__underline">My Kindness Journal</span> </h2>
@@ -41,6 +41,26 @@ function Journal({ id }) {
                     Publish
                 </button>
             </form>
+
+            <ul class="journal__list">
+
+                {user && user.journalEntries
+                    .map((journalEntry) => (
+                        <>
+                            <li class="journal__item" key={journalEntry.id}>
+                                <div class="journal__comment">
+                                    <div class="journal__comment-header">
+                                        <p class="journal__name"><span className="journal__underline"> {journalEntry.title} </span></p>
+                                        <p class="journal__date">{journalEntry.date}</p>
+                                    </div>
+                                    <p class="journal__comment-text">{journalEntry.story}</p>
+                                </div>
+                            </li>
+                        </>
+
+                    ))}
+
+            </ul>
         </article>
     )
 }

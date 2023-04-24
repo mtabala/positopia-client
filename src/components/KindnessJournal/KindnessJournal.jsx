@@ -58,7 +58,7 @@ function KindnessJournal() {
             <section className="journal">
                 <UserProfileNav user={user} id={id} {...user} />
 
-                <Journal id={id} />
+                <Journal id={id} {...user} user={user} />
             </section>
         </>
     )

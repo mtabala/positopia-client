@@ -16,7 +16,7 @@
         width: 100%;
         opacity: 90%;
         aspect-ratio: 16/9;
-        width: 68vw;
+        width: 70vw;
         height: 215px;
         border-radius: 10px;
         object-fit: cover;
@@ -86,5 +86,55 @@
     &__btn {
         align-self: flex-end;
         margin: 0;
+    }
+
+    &__list {
+        @include tablet {
+            padding: 0 3rem;
+        }
+
+        @include desktop {
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem 0rem;
+        border-bottom: 2px solid #E1E1E1;
+    }
+
+    &__comment {
+        flex: 1;
+    }
+
+    &__comment-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__name {
+        color: #069CDA;
+        width: 40%;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-family: 'Marmelad';
+        text-align: center;
+        padding-bottom: 2rem;
+        margin: auto;
+    }
+
+    &__date {
+        font-size: 0.9rem;
+        font-family: "ABeeZee";
+        color: #023e8a;
+    }
+
+    &__comment-text {
+        font-size: 0.9rem;
+        font-family: "ABeeZee";
+        color: #023e8a;
     }
 }
