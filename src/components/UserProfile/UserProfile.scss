@@ -34,8 +34,9 @@
 
     &__current {
         padding: 1.5rem;
-        border: 1px solid #023e8a;
+        // border: 1px solid #023e8a;
         border-radius: 8px;
+        box-shadow: 0px 0px 20px #069CDA;
     }
 
     &__title {
@@ -53,6 +54,13 @@
         color: #069CDA;
         font-size: 0.9rem;
         font-family: 'Marmelad';
+
+        &-acts {
+            text-align: center;
+            color: #069CDA;
+            font-size: 0.9rem;
+            font-family: 'Marmelad';
+        }
 
         &--acts {
             font-size: 1rem;
@@ -88,8 +96,9 @@
     &__about {
         width: 65%;
         border-radius: 8px;
-        border: 1px solid #023e8a;
+        // border: 1px solid #023e8a;
         padding: 1.5rem;
+        box-shadow: 0px 0px 20px #069CDA;
     }
 
     &__bio {
@@ -101,8 +110,34 @@
 
     &__stats {
         padding: 1.5rem;
-        border: 1px solid #023e8a;
+        // border: 1px solid #023e8a;
         border-radius: 8px;
         flex: 1;
+        box-shadow: 0px 0px 20px #069CDA;
+    }
+
+    &__underline-acts {
+        font-family: 'Marmelad';
+        font-size: 36px;
+        position: relative;
+        padding: 2rem;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            height: 8px;
+            width: 110%;
+            border: solid 4px #069CDA;
+            border-color: #069CDA transparent transparent transparent;
+            border-radius: 50%;
+
+            @include tablet {
+                bottom: -19px;
+                height: 11px;
+            }
+        }
+
     }
 }

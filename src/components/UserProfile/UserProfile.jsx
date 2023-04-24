@@ -66,13 +66,13 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
 
                 <div className="user__info">
                     <div className="user__about">
-                        <h4 className="user__title">About me</h4>
+                        <h4 className="user__title">About me:</h4>
                         <p className="user__input">{description}</p>
                     </div>
 
                     <div className="user__stats">
-                        <h4 className="user__title"> Stats</h4>
-                        {user && <p className="user__input"> {user.completedActs.length} Acts of Kindness completed</p>}
+                        <h4 className="user__title"> Stats:</h4>
+                        {user && <p className="user__input-acts"> <span className="user__underline-acts">{user.completedActs.length} </span> <br /> Acts of Kindness completed</p>}
 
                     </div>
 

@@ -3,6 +3,10 @@
 
 .user {
 
+    &__nav-wrapper {
+        position: fixed;
+    }
+
     &__intro-photo {
         width: 9rem;
         border-radius: 50%;

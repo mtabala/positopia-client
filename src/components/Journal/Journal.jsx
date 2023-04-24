@@ -4,6 +4,8 @@ import add from "../../assets/icons/add.svg";
 function Journal({ id }) {
     return (
         <article className="journal__write">
+            <h2 className="journal__header-first"><span className="journal__underline">My Kindness Journal</span> </h2>
+
             <div className="journal__title">
                 <h4 className="journal__header">Share a story of of kindness that you witnessed</h4>
             </div>

@@ -16,7 +16,7 @@
     }
 
     @include desktop {
-        padding-left: 7rem;
+        padding: 0 0 0 7rem;
         max-height: 90vh;
         gap: 5rem;
     }
@@ -112,6 +112,7 @@
 
     &__video {
         height: 85vh;
+        overflow: hidden;
 
         @include tablet {
             box-shadow: -30px -25px 40px #069CDA;
@@ -122,7 +123,7 @@
         }
 
         @include desktop {
-            height: 85vh;
+            height: 86vh;
             flex: 1;
         }
     }
