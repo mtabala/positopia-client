@@ -47,3 +47,23 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Crimson';
+    src: url(../../assets/fonts/Crimson/CrimsonText-Regular.woff2) format('woff2'),
+        url(../../assets/fonts/Crimson/CrimsonText-Regular.woff) format('woff'),
+        url(../../assets/fonts/Crimson/CrimsonText-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url(../../assets/fonts/Oxygen/Oxygen-Regular.woff2) format('woff2'),
+        url(../../assets/fonts/Oxygen/Oxygen-Regular.woff) format('woff'),
+        url(../../assets/fonts/Oxygen/Oxygen-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
