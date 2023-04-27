@@ -54,6 +54,23 @@
     &__icon {
         width: 20px;
         height: 20px;
+        transform: translateY(2.5px);
+
+        &--delete {
+            &:hover {
+                transform: none;
+                border-radius: 20px;
+                box-shadow: 0px 0px 10px #C94515;
+            }
+        }
+
+        &--done {
+            &:hover {
+                transform: none;
+                border-radius: 20px;
+                box-shadow: 0px 0px 10px #069CDA;
+            }
+        }
     }
 
     &__icon-space {

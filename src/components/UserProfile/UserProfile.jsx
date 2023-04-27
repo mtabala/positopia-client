@@ -27,17 +27,17 @@ function UserProfile({ id, image, name, description, rank, location, currentActs
 
                     <div className="user__data">
                         <div className="user__names">
-                            <h4 className="user__title">Name</h4>
+                            <h4 className="user__title">Name:</h4>
                             <p className="user__input">{name}</p>
                         </div>
 
                         <div className="user__ranks">
-                            <h4 className="user__title">Rank</h4>
+                            <h4 className="user__title">Rank:</h4>
                             <p className="user__input">{rank}</p>
                         </div>
 
                         <div className="user__location">
-                            <h4 className="user__title">Location</h4>
+                            <h4 className="user__title">Location:</h4>
                             <p className="user__input">{location}</p>
                         </div>
                     </div>

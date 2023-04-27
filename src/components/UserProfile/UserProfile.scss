@@ -7,8 +7,8 @@
     height: 90vh;
 
     &__view {
-        background-image: url(../../assets/images/hero_background.jpg);
-        padding: 3.5rem 5rem 0rem;
+        // background-image: url(../../assets/images/hero_background.jpg);
+        padding: 3rem 3.5rem 0rem;
         width: 100%;
     }
 
@@ -20,21 +20,28 @@
     }
 
     &__avatar {
-        width: 12.5rem;
-        border-radius: 20%;
+        width: 14.5rem;
+        padding: 1.5rem;
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px #069CDA;
+        background-image: url(../../assets/images/hero_background.jpg);
     }
 
     &__data {
         flex: 1;
         display: flex;
         flex-direction: column;
+        background-image: url(../../assets/images/hero_background.jpg);
         gap: 2rem;
-        padding: 1rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0px 0px 20px #069CDA;
     }
 
     &__current {
         padding: 1.5rem;
-        // border: 1px solid #023e8a;
+        background-image: url(../../assets/images/hero_background.jpg);
+        flex: 2;
         border-radius: 8px;
         box-shadow: 0px 0px 20px #069CDA;
     }
@@ -43,7 +50,10 @@
         color: #023e8a;
         font-size: 1.1rem;
         font-weight: 600;
-        font-family: 'Marmelad';
+        font-family: 'Oxygen';
+        text-transform: uppercase;
+        padding-bottom: 0.1rem;
+        border-bottom: 1px solid skyblue;
     }
 
     &__acts-list {
@@ -51,15 +61,17 @@
     }
 
     &__input {
-        color: #069CDA;
+        color: #0c6d95;
         font-size: 0.9rem;
-        font-family: 'Marmelad';
+        font-family: 'Century Gothic';
+        padding-top: 0.2rem;
 
         &-acts {
             text-align: center;
-            color: #069CDA;
-            font-size: 0.9rem;
-            font-family: 'Marmelad';
+            font-size: 1rem;
+            color: #0c6d95;
+            padding-top: 0.5rem;
+            font-family: 'Century Gothic';
         }
 
         &--acts {
@@ -67,7 +79,6 @@
             display: flex;
             gap: 0.5rem;
             justify-content: space-between;
-            font-family: 'ABeeZee';
             margin-bottom: 0.3rem;
         }
     }
@@ -96,7 +107,7 @@
     &__about {
         width: 65%;
         border-radius: 8px;
-        // border: 1px solid #023e8a;
+        background-image: url(../../assets/images/hero_background.jpg);
         padding: 1.5rem;
         box-shadow: 0px 0px 20px #069CDA;
     }
@@ -110,7 +121,7 @@
 
     &__stats {
         padding: 1.5rem;
-        // border: 1px solid #023e8a;
+        background-image: url(../../assets/images/hero_background.jpg);
         border-radius: 8px;
         flex: 1;
         box-shadow: 0px 0px 20px #069CDA;
